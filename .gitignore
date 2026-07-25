@@ -1,0 +1,23 @@
+node_modules/
+dist/
+.next/
+.vite/
+
+# Playwright MCP session artifacts
+.playwright-mcp/
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# Logs
+npm-debug.log*
+yarn-error.log*
+*.log
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

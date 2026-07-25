@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="How Nos Astra handles personal data submitted through its contact form, under the GDPR." />
+    <meta name="color-scheme" content="dark" />
+    <meta name="robots" content="index, follow" />
+    <title>Privacy Policy | Nos Astra</title>
+    <link rel="preload" href="public/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%23f1efe8' d='M32 2 Q35.99 15.99 39.64 21.48 L60.53 22.73 Q48.46 30.85 44.36 36.02 L49.63 56.27 Q38.18 47.3 32 45 L14.37 56.27 Q19.36 42.61 19.64 36.02 L3.47 22.73 Q18.01 23.26 24.36 21.48 Z'/%3E%3Cpath fill='%23b3c589' d='M32 2 Q35.99 15.99 39.64 21.48 L32 32 Z M60.53 22.73 Q48.46 30.85 44.36 36.02 L32 32 Z M49.63 56.27 Q38.18 47.3 32 45 L32 32 Z M14.37 56.27 Q19.36 42.61 19.64 36.02 L32 32 Z M3.47 22.73 Q18.01 23.26 24.36 21.48 L32 32 Z'/%3E%3C/svg%3E" />
+    <style>
+      @font-face {
+        font-family: "Fraunces";
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url("public/fonts/fraunces.woff2") format("woff2");
+      }
+
+      :root {
+        --ink: #202221;
+        --paper: #f1efe8;
+        --muted: #afb1a9;
+        --line: rgba(241, 239, 232, .16);
+        --olive: #b3c589;
+        --olive-light: #c6d69d;
+      }
+
+      * { box-sizing: border-box; }
+      body { margin: 0; background: var(--ink); color: var(--paper); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+      a { color: inherit; }
+      .shell { width: min(760px, calc(100% - 48px)); margin: 0 auto; }
+
+      .legal-header { border-bottom: 1px solid var(--line); }
+      .legal-header .shell { display: flex; align-items: center; justify-content: space-between; gap: 20px; height: 84px; width: min(1200px, calc(100% - 48px)); }
+      .brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; }
+      .brand-mark { display: block; width: 32px; height: 32px; flex: none; transition: transform .5s cubic-bezier(.16, 1, .3, 1); }
+      .brand-mark .mark-body { fill: var(--paper); }
+      .brand-mark .mark-facet { fill: var(--olive); }
+      .brand:hover .brand-mark { transform: rotate(72deg); }
+      .brand-name { font-family: "Fraunces", Georgia, serif; font-size: 26px; font-weight: 600; letter-spacing: -.025em; line-height: 1; white-space: nowrap; }
+      .brand-name span { color: var(--olive); }
+      .back-link { color: var(--muted); font-size: 14px; text-decoration: none; transition: color .2s ease; }
+      .back-link:hover { color: var(--paper); }
+
+      main { padding: 74px 0 96px; }
+      .kicker { margin: 0 0 20px; color: var(--olive); font-size: 11px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+      h1 { margin: 0; font-size: clamp(40px, 6vw, 62px); font-weight: 700; letter-spacing: -.055em; line-height: .95; }
+      .updated { margin: 22px 0 0; color: var(--muted); font-size: 14px; }
+      .lede { margin: 30px 0 0; color: var(--muted); font-size: 18px; line-height: 1.62; }
+      h2 { margin: 56px 0 0; font-size: 23px; font-weight: 700; letter-spacing: -.03em; }
+      h3 { margin: 32px 0 0; font-size: 16px; font-weight: 700; }
+      p, li { color: var(--muted); font-size: 16px; line-height: 1.68; }
+      p { margin: 14px 0 0; }
+      ul { margin: 14px 0 0; padding-left: 20px; }
+      li { margin: 8px 0; }
+      li strong, p strong { color: var(--paper); }
+      main a { color: var(--olive); font-weight: 700; text-decoration: none; }
+      main a:hover { color: var(--olive-light); text-decoration: underline; }
+      .callout { margin: 20px 0 0; padding: 20px 22px; border-left: 2px solid var(--olive); background: rgba(179, 197, 137, .07); }
+      .callout p { margin: 0; }
+      dl { margin: 14px 0 0; }
+      dt { margin: 16px 0 0; color: var(--paper); font-size: 15px; font-weight: 700; }
+      dd { margin: 6px 0 0; color: var(--muted); font-size: 16px; line-height: 1.68; }
+
+      .legal-footer { border-top: 1px solid var(--line); padding: 30px 0 34px; color: rgba(175, 177, 169, .7); font-size: 12.5px; line-height: 1.55; }
+      .legal-footer .shell { width: min(1200px, calc(100% - 48px)); }
+      .legal-footer a { color: var(--muted); text-decoration: none; }
+      .legal-footer a:hover { color: var(--paper); }
+
+      @media (max-width: 800px) {
+        .shell, .legal-header .shell, .legal-footer .shell { width: min(100% - 32px, 640px); }
+        .legal-header .shell { height: 72px; }
+        .brand-name { font-size: 22px; }
+        .brand-mark { width: 28px; height: 28px; }
+        main { padding: 52px 0 70px; }
+        h2 { margin-top: 44px; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="legal-header">
+      <div class="shell">
+        <a class="brand" href="index.html" aria-label="Nos Astra home">
+          <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+            <path class="mark-body" d="M 32.00 2.00 Q 35.99 15.99 39.64 21.48 L 60.53 22.73 Q 48.46 30.85 44.36 36.02 L 49.63 56.27 Q 38.18 47.30 32.00 45.00 L 14.37 56.27 Q 19.36 42.61 19.64 36.02 L 3.47 22.73 Q 18.01 23.26 24.36 21.48 L 32.00 2.00 Z" />
+            <path class="mark-facet" d="M 32.00 2.00 Q 35.99 15.99 39.64 21.48 L 32.00 32.00 Z M 60.53 22.73 Q 48.46 30.85 44.36 36.02 L 32.00 32.00 Z M 49.63 56.27 Q 38.18 47.30 32.00 45.00 L 32.00 32.00 Z M 14.37 56.27 Q 19.36 42.61 19.64 36.02 L 32.00 32.00 Z M 3.47 22.73 Q 18.01 23.26 24.36 21.48 L 32.00 32.00 Z" />
+          </svg>
+          <span class="brand-name">Nos <span>Astra</span></span>
+        </a>
+        <a class="back-link" href="index.html">&larr; Back to site</a>
+      </div>
+    </header>
+
+    <main>
+      <div class="shell">
+        <p class="kicker">Legal</p>
+        <h1>Privacy Policy</h1>
+        <p class="updated">Last updated: 25 July 2026</p>
+
+        <p class="lede">This policy explains what personal data Nos Astra collects when you use this website, why it is collected, who it is shared with, and the rights you have over it. It is written to meet the requirements of the EU General Data Protection Regulation (GDPR) and the Croatian Act on the Implementation of the GDPR.</p>
+
+        <h2>1. Who is responsible for your data</h2>
+        <p>The data controller is:</p>
+        <dl>
+          <dt>Nos Astra, obrt za računalno programiranje i savjetovanje, vl. Tamara Martinović</dt>
+          <dd>
+            Cvjetni trg 3, Njivice, Croatia<br />
+            OIB: 23795034700 &middot; MBO: 99335433<br />
+            Email: <a href="mailto:hello@nostastra.co">hello@nostastra.co</a>
+          </dd>
+        </dl>
+        <p>Nos Astra is a sole proprietorship (obrt) registered in the Obrtni registar of the Republic of Croatia. There is no separate data protection officer; enquiries about this policy go directly to the email address above.</p>
+
+        <h2>2. What data is collected</h2>
+        <h3>Data you give us through the contact form</h3>
+        <p>When you submit the enquiry form on this site, the following is collected:</p>
+        <ul>
+          <li><strong>Your name</strong> — so replies can be addressed properly.</li>
+          <li><strong>Your email address</strong> — so a reply can be sent.</li>
+          <li><strong>Your message</strong> — the description of what you would like help with.</li>
+        </ul>
+        <p>Please do not include sensitive personal data, confidential client information, or credentials in the message field. If your enquiry needs that level of detail, say so and we will agree a secure channel first.</p>
+
+        <h3>Technical data</h3>
+        <p>Submitting the form also causes technical data to be recorded by the services that process it, including your <strong>IP address</strong>, browser user agent, and the date and time of submission. This is used to prevent spam and abuse of the form.</p>
+        <p>The web server hosting this site keeps standard access logs, which may include IP addresses and requested URLs, for security and diagnostics.</p>
+
+        <h2>3. Why it is collected, and the legal basis</h2>
+        <dl>
+          <dt>To read and answer your enquiry</dt>
+          <dd>Legal basis: <strong>steps taken at your request prior to entering into a contract</strong> (GDPR Article 6(1)(b)). You chose to make contact, and the data is used to respond.</dd>
+          <dt>To keep a record of business correspondence</dt>
+          <dd>Legal basis: <strong>legitimate interests</strong> (GDPR Article 6(1)(f)) — being able to refer back to what was discussed and to substantiate a business relationship.</dd>
+          <dt>To keep the form free of spam and abuse</dt>
+          <dd>Legal basis: <strong>legitimate interests</strong> (GDPR Article 6(1)(f)) — keeping the site functional and secure.</dd>
+        </dl>
+        <p>Your data is <strong>not</strong> used to send marketing, and it is not sold, rented, or traded.</p>
+
+        <h2>4. Who else processes it</h2>
+        <p>Personal data submitted through this site is handled by the following processors acting on Nos Astra's instructions:</p>
+        <ul>
+          <li><strong>Formspree, Inc.</strong> — receives the contact form submission and forwards it by email. Formspree is based in the United States.</li>
+          <li><strong>The website host</strong> — serves this site and keeps the access logs described above.</li>
+          <li><strong>The email provider</strong> — stores the resulting email so it can be read and replied to.</li>
+        </ul>
+        <p>No other party receives your data unless disclosure is required by law.</p>
+
+        <h2>5. Transfers outside the EEA</h2>
+        <p>Because the contact form is processed by Formspree, Inc. in the United States, submitting the form involves a transfer of personal data outside the European Economic Area. Such transfers rely on the safeguards available under Chapter V of the GDPR — an adequacy decision or the European Commission's Standard Contractual Clauses, as set out in that provider's own data processing terms.</p>
+        <p>If you would prefer that your data not be transferred outside the EEA, do not use the form: email <a href="mailto:hello@nostastra.co">hello@nostastra.co</a> directly instead.</p>
+
+        <h2>6. How long it is kept</h2>
+        <p>Enquiry correspondence is kept for up to <strong>24 months</strong> from our last exchange, after which it is deleted unless it has become part of a client relationship with its own record-keeping and statutory accounting obligations. Server and spam-prevention logs are kept for a short period only, as determined by the providers named above.</p>
+        <p>You can ask for your enquiry to be deleted sooner at any time.</p>
+
+        <h2>7. Cookies and analytics</h2>
+        <p>This website sets <strong>no cookies</strong>, and uses <strong>no analytics, tracking pixels, or advertising scripts</strong>. Web fonts are served from this site's own domain rather than a third-party font service, so viewing these pages does not report your visit to anyone else. No consent banner is needed because there is nothing to consent to.</p>
+
+        <h2>8. Your rights</h2>
+        <p>Under the GDPR you have the right to:</p>
+        <ul>
+          <li>request <strong>access</strong> to the personal data held about you;</li>
+          <li>have inaccurate data <strong>corrected</strong>;</li>
+          <li>have your data <strong>erased</strong>;</li>
+          <li>ask that processing be <strong>restricted</strong>;</li>
+          <li><strong>object</strong> to processing based on legitimate interests;</li>
+          <li>receive your data in a portable form (<strong>data portability</strong>);</li>
+          <li>lodge a <strong>complaint</strong> with a supervisory authority.</li>
+        </ul>
+        <p>To exercise any of these, email <a href="mailto:hello@nostastra.co">hello@nostastra.co</a>. A response will follow within one month. There is no charge for a reasonable request.</p>
+        <div class="callout">
+          <p>The supervisory authority in Croatia is the <strong>Agencija za zaštitu osobnih podataka (AZOP)</strong>, Selska cesta 136, 10000 Zagreb — <a href="https://azop.hr" target="_blank" rel="noopener">azop.hr</a>. You may complain to AZOP, or to the authority in your own EU country of residence, at any time.</p>
+        </div>
+
+        <h2>9. Automated decision-making</h2>
+        <p>Nos Astra does not carry out automated decision-making or profiling that produces legal effects for you. Your enquiry is read by a person.</p>
+
+        <h2>10. Security</h2>
+        <p>This site is served over HTTPS, and the form is submitted over an encrypted connection. No system is perfectly secure, so please use judgement about what you put in a first message to a stranger — see the note in section 2.</p>
+
+        <h2>11. Changes to this policy</h2>
+        <p>If this policy changes, the revised version will be published on this page with a new "last updated" date. Material changes affecting how existing enquiry data is used will be communicated directly where contact details are held.</p>
+
+        <h2>12. Contact</h2>
+        <p>Questions about this policy or about how your data is handled: <a href="mailto:hello@nostastra.co">hello@nostastra.co</a>.</p>
+      </div>
+    </main>
+
+    <footer class="legal-footer">
+      <div class="shell">
+        &copy; <span id="footerYear">2026</span> Nos Astra. All rights reserved. &middot; <a href="index.html">Home</a>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        var year = document.getElementById("footerYear");
+        var now = new Date().getFullYear();
+        if (year && now > 2026) year.textContent = now;
+      })();
+    </script>
+  </body>
+</html>
