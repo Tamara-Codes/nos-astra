@@ -3,9 +3,67 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Nos Astra provides AI consulting and custom software for businesses with real work to improve." />
+    <meta name="description" content="Practical AI consulting, workflow automation, and custom software for businesses. Work directly with founder Tamara Martinovic to make work easier." />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Tamara Martinovic" />
     <meta name="color-scheme" content="dark" />
-    <title>Nos Astra | AI consulting and custom software</title>
+    <link rel="canonical" href="https://www.nosastra.co/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Nos Astra" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:title" content="AI Consulting &amp; Custom Software | Nos Astra" />
+    <meta property="og:description" content="Practical AI consulting, workflow automation, and custom software for businesses. Work directly with founder Tamara Martinovic to make work easier." />
+    <meta property="og:url" content="https://www.nosastra.co/" />
+    <meta property="og:image" content="https://www.nosastra.co/nos-astra-hero-desktop-v5.png" />
+    <meta property="og:image:width" content="1672" />
+    <meta property="og:image:height" content="941" />
+    <meta property="og:image:alt" content="Abstract olive and graphite Nos Astra star sculpture" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="AI Consulting &amp; Custom Software | Nos Astra" />
+    <meta name="twitter:description" content="Practical AI consulting, workflow automation, and custom software for businesses that want to make work easier." />
+    <meta name="twitter:image" content="https://www.nosastra.co/nos-astra-hero-desktop-v5.png" />
+    <title>AI Consulting &amp; Custom Software | Nos Astra</title>
+    <script id="structured-data" type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://www.nosastra.co/#organization",
+            "name": "Nos Astra",
+            "url": "https://www.nosastra.co/",
+            "email": "hello@nosastra.co",
+            "founder": { "@id": "https://www.nosastra.co/#founder" },
+            "sameAs": [
+              "https://www.linkedin.com/in/tamara-codes",
+              "https://github.com/tamara-codes"
+            ]
+          },
+          {
+            "@type": "Person",
+            "@id": "https://www.nosastra.co/#founder",
+            "name": "Tamara Martinovic",
+            "honorificSuffix": "PhD",
+            "url": "https://tamara.rocks",
+            "image": "https://www.nosastra.co/tamara-martinovic.jpg",
+            "jobTitle": "Founder",
+            "worksFor": { "@id": "https://www.nosastra.co/#organization" },
+            "sameAs": [
+              "https://www.linkedin.com/in/tamara-codes",
+              "https://github.com/tamara-codes"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://www.nosastra.co/#website",
+            "url": "https://www.nosastra.co/",
+            "name": "Nos Astra",
+            "publisher": { "@id": "https://www.nosastra.co/#organization" },
+            "inLanguage": "en"
+          }
+        ]
+      }
+    </script>
     <link rel="preload" href="/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%23f1efe8' d='M32 2 Q35.99 15.99 39.64 21.48 L60.53 22.73 Q48.46 30.85 44.36 36.02 L49.63 56.27 Q38.18 47.3 32 45 L14.37 56.27 Q19.36 42.61 19.64 36.02 L3.47 22.73 Q18.01 23.26 24.36 21.48 Z'/%3E%3Cpath fill='%23b3c589' d='M32 2 Q35.99 15.99 39.64 21.48 L32 32 Z M60.53 22.73 Q48.46 30.85 44.36 36.02 L32 32 Z M49.63 56.27 Q38.18 47.3 32 45 L32 32 Z M14.37 56.27 Q19.36 42.61 19.64 36.02 L32 32 Z M3.47 22.73 Q18.01 23.26 24.36 21.48 L32 32 Z'/%3E%3C/svg%3E" />
     <style>
@@ -28,7 +86,7 @@
       }
 
       * { box-sizing: border-box; }
-      #legacy-content { display: none; }
+      #root:not(:empty) + #legacy-content { display: none; }
       html { scroll-behavior: smooth; scrollbar-width: none; }
       html::-webkit-scrollbar { display: none; }
       body { margin: 0; background: var(--ink); color: var(--paper); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
@@ -238,6 +296,21 @@
       }
       @keyframes page-rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
 
+      .service-page { padding-top: 82px; background: var(--ink); }
+      .service-page .page-hero-band { background: radial-gradient(88% 120% at 50% -18%, rgba(179, 197, 137, .16), transparent 62%), var(--surface); border-bottom: 1px solid var(--line); }
+      .service-page .page-hero, .service-page .page-section { padding: 100px 0; }
+      .service-page .page-hero p, .service-page .page-section p { max-width: 600px; }
+      .service-page .page-list { border-top: 1px solid var(--line); margin-top: 52px; }
+      .service-page .page-item { padding: 28px 0; border-bottom: 1px solid var(--line); }
+      .service-page .page-item h3 { color: var(--olive); font-size: 28px; }
+      .service-page .page-item p { margin: 10px 0 0; color: var(--muted); font-size: 17px; line-height: 1.55; }
+      .service-page .page-cta { padding: 80px 0; background: var(--olive); color: var(--ink); }
+      .service-page .page-cta .button { margin-top: 26px; background: var(--ink); color: var(--paper); }
+
+      @media (max-width: 800px) {
+        .service-page .page-hero, .service-page .page-section { padding: 76px 0; }
+      }
+
       @media (prefers-reduced-motion: reduce) {
         ::view-transition-group(root), ::view-transition-old(root), ::view-transition-new(root) { animation: none; }
       }
@@ -284,7 +357,7 @@
         <div class="hero-image">
           <picture>
             <source media="(max-width: 800px)" srcset="/nos-astra-hero-mobile-v1.png" />
-            <img src="/nos-astra-hero-desktop-v5.png" alt="Abstract olive and graphite star sculpture" />
+            <img src="/nos-astra-hero-desktop-v5.png" width="1672" height="941" fetchpriority="high" alt="Abstract olive and graphite star sculpture" />
           </picture>
         </div>
       </section>
@@ -297,9 +370,9 @@
             <p class="section-copy">Start with the problem that is wasting time, losing information, or making a good idea harder to deliver. Then build the useful part.</p>
           </div>
           <div class="services-grid">
-            <a class="service" href="#/ai-consulting"><h3>AI consulting</h3><p>Find where AI is actually useful, decide what is worth building, and make a clear plan.</p></a>
-            <a class="service" href="#/custom-builds"><h3>Custom builds</h3><p>Create focused internal tools, client-facing products, and SaaS MVPs around the way your business works.</p></a>
-            <a class="service" href="#/workflow-automation"><h3>Workflow automation</h3><p>Connect the repetitive steps, systems, and decisions that make everyday work slower than it needs to be.</p></a>
+            <a class="service" href="/ai-consulting/"><h3>AI consulting</h3><p>Find where AI is actually useful, decide what is worth building, and make a clear plan.</p></a>
+            <a class="service" href="/custom-builds/"><h3>Custom builds</h3><p>Create focused internal tools, client-facing products, and SaaS MVPs around the way your business works.</p></a>
+            <a class="service" href="/workflow-automation/"><h3>Workflow automation</h3><p>Connect the repetitive steps, systems, and decisions that make everyday work slower than it needs to be.</p></a>
           </div>
         </div>
       </section>
@@ -363,9 +436,9 @@
             <div class="footer-col">
               <h2 class="footer-heading">Services</h2>
               <ul>
-                <li><a href="#services">AI consulting</a></li>
-                <li><a href="#services">Custom builds</a></li>
-                <li><a href="#services">Automation</a></li>
+                <li><a href="/ai-consulting/">AI consulting</a></li>
+                <li><a href="/custom-builds/">Custom builds</a></li>
+                <li><a href="/workflow-automation/">Workflow automation</a></li>
               </ul>
             </div>
             <div class="footer-col">

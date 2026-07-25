@@ -38,11 +38,14 @@ public/         Images and self-hosted fonts
 
 ### Routing
 
-The site is a single page with hash routes handled in `src/main.jsx`:
+The site uses clean, indexable paths handled in `src/main.jsx`:
 
-- `#/` — homepage
-- `#/ai-consulting`, `#/custom-builds`, `#/workflow-automation` — service pages
+- `/` — homepage
+- `/ai-consulting/`, `/custom-builds/`, `/workflow-automation/` — service pages
 - `#contact`, `#services`, `#about` — in-page anchors on the homepage
+
+The production build prerenders each service page to its own `index.html`, including unique
+metadata, canonical URLs, structured data, and visible HTML content before React loads.
 
 Route changes run through the View Transitions API: a short cross-fade of the screen, then the
 arriving page's content rises into place. Browsers without the API, and anyone who prefers reduced
