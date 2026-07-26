@@ -127,13 +127,19 @@ function ContactForm() {
   const [state, setState] = useState("idle");
   async function submit(event) {
     event.preventDefault();
+    /* Hold the form element: React clears event.currentTarget once the handler
+       returns, so reading it after the await would be null. */
+    const form = event.currentTarget;
     setState("sending");
     try {
-      const response = await fetch("https://formspree.io/f/mqergkvn", { method: "POST", body: new FormData(event.currentTarget), headers: { Accept: "application/json" } });
-      if (!response.ok) throw new Error();
-      event.currentTarget.reset();
+      const response = await fetch("https://formspree.io/f/mqergkvn", { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } });
+      if (!response.ok) throw new Error(`Formspree responded ${response.status}`);
+      form.reset();
       setState("sent");
-    } catch { setState("error"); }
+    } catch (error) {
+      console.error("Contact form submission failed", error);
+      setState("error");
+    }
   }
   return <form className="contact-form" onSubmit={submit}>
     <div className="form-field"><label htmlFor="name">Your name</label><input id="name" name="name" autoComplete="name" required /></div>
