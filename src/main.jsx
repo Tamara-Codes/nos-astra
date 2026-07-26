@@ -132,7 +132,7 @@ function ContactForm() {
     const form = event.currentTarget;
     setState("sending");
     try {
-      const response = await fetch("https://formspree.io/f/mqergkvn", { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } });
+      const response = await fetch("https://formspree.io/f/xpqvovvv", { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } });
       if (!response.ok) throw new Error(`Formspree responded ${response.status}`);
       form.reset();
       setState("sent");
