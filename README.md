@@ -1,6 +1,6 @@
 # Nos Astra
 
-Marketing site for **Nos Astra** — AI consulting and custom software.
+Marketing site for **Nos Astra** — small software products (StackLight, Welcome Book, Maštograd).
 
 Live copy, layout and styling live in `index.html`; the interactive site is a small React app
 mounted into it by Vite.
@@ -32,24 +32,21 @@ npm run dev      # http://localhost:5173
 ```
 index.html      Page shell, all global CSS, and a no-JS fallback copy of the homepage
 privacy.html    Standalone privacy policy (GDPR, required by the contact form)
-src/main.jsx    The whole React app: routing, homepage sections, service pages, contact form
+src/main.jsx    The whole React app: homepage sections and the contact form
 public/         Images and self-hosted fonts
 ```
 
-### Routing
+### Pages
 
-The site uses clean, indexable paths handled in `src/main.jsx`:
+One page, no router:
 
-- `/` — homepage
-- `/ai-consulting/`, `/custom-builds/`, `/workflow-automation/` — service pages
-- `#contact`, `#services`, `#about` — in-page anchors on the homepage
+- `/` — the homepage, with `#products`, `#about`, and `#contact` in-page anchors
+- `/privacy.html` — standalone privacy policy
 
-The production build prerenders each service page to its own `index.html`, including unique
-metadata, canonical URLs, structured data, and visible HTML content before React loads.
-
-Route changes run through the View Transitions API: a short cross-fade of the screen, then the
-arriving page's content rises into place. Browsers without the API, and anyone who prefers reduced
-motion, get an instant swap.
+The product cards link out to each product's own site (`stacklight.nosastra.co`,
+`welcomebook.eu`, `mastograd.eu`). The product list lives in one array at the top of
+`src/main.jsx`; the same three cards are duplicated in the no-JS fallback in `index.html`,
+so update both when a product changes.
 
 ## Deployment
 
