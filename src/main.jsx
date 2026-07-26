@@ -181,12 +181,29 @@ function App() {
     document.addEventListener("click", navigate);
     return () => document.removeEventListener("click", navigate);
   }, [route]);
+  /* Landing on the homepage with a fragment (/#contact from a service page, or a shared
+     link) used to end up at the top: the browser scrolls to the anchor, then this effect
+     forced scrollTo(0, 0) on mount and undid it. Honour the fragment when there is one. */
   useEffect(() => {
     setMetadata(route);
     const previousScrollBehavior = document.documentElement.style.scrollBehavior;
     document.documentElement.style.scrollBehavior = "auto";
-    window.scrollTo(0, 0);
+    const target = window.location.hash.length > 1 && document.getElementById(decodeURIComponent(window.location.hash.slice(1)));
+    if (target) target.scrollIntoView(); else window.scrollTo(0, 0);
     requestAnimationFrame(() => { document.documentElement.style.scrollBehavior = previousScrollBehavior; });
+  }, [route]);
+  /* The scrolled header state used to live in an inline script in index.html, which binds
+     by id - and that id is now inside the pre-hydration copy React hides, so the real
+     header never picked the class up. Own it here. */
+  useEffect(() => {
+    const header = document.querySelector("#root .site-header");
+    if (!header) return;
+    let ticking = false;
+    function apply() { header.classList.toggle("is-scrolled", window.scrollY > 24); ticking = false; }
+    function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(apply); } }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    apply();
+    return () => window.removeEventListener("scroll", onScroll);
   }, [route]);
   async function copyEmail() { await navigator.clipboard?.writeText("hello@nosastra.co"); setCopied(true); setTimeout(() => setCopied(false), 1800); }
   const content = servicePages[route] ? <ServicePage key={route} page={servicePages[route]} /> : <main id="top"><section className="hero"><div className="hero-content"><div><p className="kicker">AI consulting and custom software</p><h1>Make your business easier to run.</h1><p className="hero-copy">Nos Astra helps businesses turn manual work and good ideas into practical AI tools, automations, and products.</p><a className="hero-cta" href="#contact"><span className="hero-cta-face"><span className="hero-cta-label"><span className="hero-cta-text">Start a project</span></span></span></a></div></div><div className="hero-image"><picture><source media="(max-width: 800px)" srcSet="/nos-astra-hero-mobile-v1.png" /><img src="/nos-astra-hero-desktop-v5.png" width="1672" height="941" fetchPriority="high" alt="Abstract olive and graphite star sculpture" /></picture></div></section><section id="services"><div className="shell services"><div className="section-intro"><p className="kicker">What we do</p><h2>Useful systems, built around real work.</h2><p className="section-copy">Start with the problem that is wasting time, losing information, or making a good idea harder to deliver. Then build the useful part.</p></div><div className="services-grid">{services.map(([name, copy, href]) => <a className="service" href={href} data-route key={name}><h3>{name}</h3><p>{copy}</p></a>)}</div></div></section><section id="about"><div className="shell about about-layout"><div className="portrait"><img src="/tamara-martinovic.jpg" width="1254" height="1254" loading="lazy" decoding="async" alt="Tamara Martinovic, founder of Nos Astra" /></div><div className="about-copy"><h2>Practical AI, built together.</h2><p><span className="name">I’m Tamara Martinovic, PhD,</span> founder of Nos Astra. I work directly with people who need practical AI and software help, from the first useful conversation to a working system.</p><a className="text-link" href="https://tamara.rocks" target="_blank" rel="noreferrer">More about Tamara</a></div></div></section><section id="contact"><div className="shell contact"><div className="contact-panel"><div><p className="kicker">Have something in mind?</p><h2>Let’s make it easier.</h2><p className="contact-note">Prefer email? <button className="copy-email" type="button" onClick={copyEmail}>{copied ? "Email copied" : "hello@nosastra.co"}</button></p></div><ContactForm /></div></div></section></main>;
