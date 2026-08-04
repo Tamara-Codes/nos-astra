@@ -1,0 +1,16 @@
+# Nos Astra
+
+> Nos Astra is a one-person software studio run by Tamara Martinovic, PhD. It builds and operates small, focused software products — each one automates a single tedious task and keeps running with minimal upkeep.
+
+Founder: Tamara Martinovic, PhD — https://tamara.rocks
+Contact: hello@nosastra.co
+
+## Products
+
+- StackLight (https://stacklight.nosastra.co): a daily email digest of the status pages and changelogs behind your dev stack. Marks each change red, yellow, or green so you only stop for the ones that break things.
+- Welcome Book (https://welcomebook.eu): a QR-code digital guest guide for holiday rental apartments. Answers guest questions (Wi-Fi, check-in/out, house rules, beaches, restaurants, local tips) in the guest's own language, with a gentle review reminder. No app, no login required. Priced from €99/year.
+- Maštograd (https://mastograd.eu): personalized printable alphabet and number activity sheets for children ages 3–6, previewed live as a parent types the child's name, delivered as a print-ready file.
+
+## Notes
+
+All three products are built and supported directly by the founder — the person who answers support email is the person who wrote the software.
