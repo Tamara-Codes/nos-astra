@@ -377,13 +377,6 @@
       .start-price-card ul { display: grid; gap: 13px; margin: 28px 0; padding: 0; list-style: none; }
       .start-price-card li { display: flex; gap: 10px; align-items: start; color: var(--paper); font-size: 14px; line-height: 1.45; }
       .start-price-card li::before { content: "✓"; color: var(--olive); font-weight: 700; }
-      .start-price-benefit { margin: 4px 0 0; padding: 21px 0 0; border-top: 1px solid rgba(179,197,137,.3); }
-      .start-price-benefit span { display: block; margin-bottom: 9px; color: var(--olive); font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
-      .start-price-benefit strong { display: block; color: var(--paper); font-family: "Fraunces", Georgia, serif; font-size: 20px; font-weight: 600; line-height: 1.25; }
-      .start-price-benefit p { margin: 8px 0 0; color: var(--muted); font-size: 13px; line-height: 1.5; }
-      .start-price-benefit-link { display: inline-flex; align-items: center; min-height: 38px; margin-top: 16px; padding: 8px 14px; border: 1px solid rgba(179,197,137,.6); border-radius: 999px; background: rgba(179,197,137,.1); color: var(--olive-light); font-size: 13px; font-weight: 700; text-decoration: none; }
-      .start-price-benefit-link:hover { background: var(--olive); color: var(--ink); }
-      .start-price-benefit-link:focus-visible { outline: 2px solid var(--olive-light); outline-offset: 3px; }
       .start-included { padding: 100px 0; background: #242725; }
       .start-included .section-intro .kicker { display: none; }
       .start-item-grid { display: grid; gap: 36px; max-width: 900px; margin-top: 80px; }
@@ -398,120 +391,6 @@
       .start-item p { grid-area: description; margin: 0; }
       .start-item p, .start-email-note { color: var(--muted); line-height: 1.65; }
       .start-email-note { max-width: 850px; margin: 26px 0 0; font-size: 13px; }
-      .start-mobile { padding: 60px 0; background: var(--olive); color: var(--ink); }
-      .start-mobile-layout { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(250px, .7fr); align-items: center; gap: clamp(48px, 8vw, 120px); }
-      .start-mobile .kicker { color: rgba(32,34,33,.65); }
-      .start-mobile h2 { max-width: 760px; font-size: clamp(38px, 5vw, 62px); line-height: 1.08; }
-      .start-mobile-copy > p:not(.kicker) { max-width: 680px; font-size: 18px; line-height: 1.6; }
-      .start-mobile-note { max-width: 580px !important; margin-top: 28px; padding-top: 18px; border-top: 1px solid rgba(32,34,33,.28); font-size: 14px !important; }
-      .start-mobile-price { display: flex; flex-direction: column; align-items: flex-start; padding-left: clamp(32px, 5vw, 72px); border-left: 1px solid rgba(32,34,33,.3); }
-      .start-mobile-price span { font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
-      .start-mobile-price strong { margin: 12px 0 -5px; font-family: "Fraunces", Georgia, serif; font-size: clamp(70px, 8vw, 112px); font-weight: 600; line-height: 1; letter-spacing: -.07em; white-space: nowrap; }
-      .start-mobile-price .start-mobile-period { font-size: 16px; letter-spacing: 0; text-transform: none; }
-      .start-mobile-overview { max-width: 820px; }
-      @media (min-width: 901px) {
-        #start-mobile > .shell { display: grid; grid-template-columns: minmax(0, 1fr) minmax(330px, 430px); grid-template-rows: auto 1fr auto; column-gap: clamp(48px, 7vw, 100px); row-gap: 24px; align-items: start; }
-        #start-mobile .start-mobile-overview { grid-column: 1; grid-row: 1; }
-        #start-mobile .start-mobile-showcase { display: contents; }
-        #start-mobile .start-mobile-features { grid-column: 1; grid-row: 2; padding-top: 24px; }
-        #start-mobile .start-mobile-figure { grid-column: 2; grid-row: 1 / 3; }
-        #start-mobile .start-mobile-plans { grid-column: 1 / -1; grid-row: 3; margin-top: 12px; }
-      }
-      .start-mobile-overview > p:not(.kicker) { max-width: 690px; margin: 20px 0 0; font-size: 18px; line-height: 1.6; }
-      .start-mobile-showcase { display: grid; grid-template-columns: minmax(0, 1fr) minmax(330px, 430px); align-items: start; gap: clamp(48px, 7vw, 100px); margin-top: 14px; }
-      .start-mobile-features h3 { margin: 0 0 28px; font-family: "Fraunces", Georgia, serif; font-size: 30px; font-weight: 600; line-height: 1.2; letter-spacing: -.035em; }
-      .start-mobile-features ul { margin: 0; padding: 0; list-style: none; }
-      .start-mobile-features li { display: grid; grid-template-columns: minmax(155px, .7fr) minmax(0, 1fr); gap: 28px; padding: 20px 0; border-top: 1px solid rgba(32,34,33,.16); }
-      .start-mobile-features li strong { font-size: 16px; line-height: 1.4; }
-      .start-mobile-features li span { color: rgba(32,34,33,.75); font-size: 15px; line-height: 1.6; }
-      .start-mobile-figure { width: 100%; margin: 0; }
-      .start-mobile-demo { overflow: hidden; max-width: 430px; margin: 0 auto; border: 7px solid #222522; border-radius: 30px; background: #f6f5f3; box-shadow: 0 24px 60px rgba(32,34,33,.24); color: #171717; }
-      .start-demo-topline { display: flex; padding: 11px 17px 0; background: #fff; color: #fa6637; font-size: 10px; font-weight: 800; letter-spacing: .03em; }
-      .start-demo-header { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 8px 17px 13px; border-bottom: 1px solid #e7e5e4; background: #fff; font-size: 15px; }
-      .start-demo-title { color: #252525 !important; font-size: 17px !important; }
-      .start-demo-admin-button { min-width: 74px; min-height: 36px; padding: 0 15px !important; border: 0 !important; border-radius: 20px; background: #202221 !important; color: #fff !important; font: inherit; font-size: 13px !important; font-weight: 700 !important; }
-      .start-demo-admin-button:hover { background: #3b4639 !important; }
-      .start-demo-back-button { padding: 7px 0; border: 0; background: none; color: #777; font: inherit; font-size: 12px; }
-      .start-demo-body { display: grid; gap: 13px; padding: 14px; }
-      .start-demo-confirmation { display: flex; align-items: center; gap: 9px; margin: 0; padding: 11px 13px; border: 1px solid #b7e4c2; border-radius: 11px; background: #edf8ef; color: #176b34; font-size: 13px; font-weight: 700; }
-      .start-demo-confirmation span { display: grid; width: 21px; height: 21px; place-items: center; border-radius: 50%; background: #16a34a; color: #fff; font-size: 13px; }
-      .start-demo-notifications { min-height: 40px; border: 1px solid #e5e2e0; border-radius: 14px; background: #fff; color: #171717; font: inherit; font-size: 13px; font-weight: 700; }
-      .start-demo-sites { display: flex; flex-wrap: wrap; gap: 8px; }
-      .start-demo-sites button { min-height: 39px; padding: 0 15px; border: 1px solid #e4e1df; border-radius: 22px; background: #fff; color: #171717; font: inherit; font-size: 13px; white-space: nowrap; }
-      .start-demo-sites button.is-selected { border-color: #171717; background: #171717; color: white; }
-      .start-demo-card { padding: 15px; border: 1px solid #e5e2e0; border-radius: 17px; background: #fff; box-shadow: 0 1px 2px rgba(20,20,20,.08); }
-      .start-demo-work-card { display: grid; gap: 15px; }
-      .start-demo-field { display: grid; gap: 8px; color: #171717; font-size: 13px; font-weight: 500; }
-      .start-demo-field textarea { width: 100%; min-width: 0; min-height: 102px; padding: 11px; border: 1px solid #e2dfdd; border-radius: 12px; background: #fff; color: #1c1917; font: inherit; resize: vertical; }
-      .start-demo-field input[type="file"] { width: 100%; min-width: 0; padding: 14px; border: 2px dashed #e5e2e0; border-radius: 12px; background: #fff; color: #777; font: inherit; font-size: 12px; }
-      .start-demo-field input[type="file"]::file-selector-button { margin-right: 12px; padding: 8px 12px; border: 0; border-radius: 8px; background: #f6f5f3; color: #171717; font: inherit; }
-      .start-demo-field textarea:focus-visible, .start-demo-field input:focus-visible, .start-demo-header button:focus-visible, .start-demo-days button:focus-visible, .start-demo-save:focus-visible, .start-demo-sites button:focus-visible, .start-demo-notifications:focus-visible { outline: 2px solid #c4562f; outline-offset: 2px; }
-      .start-demo-switches { padding: 0 15px; }
-      .start-demo-switch-item { border-bottom: 1px solid #e7e5e4; }
-      .start-demo-switch-item:last-child { border-bottom: 0; }
-      .start-demo-switch-row { position: relative; display: flex; min-height: 48px; align-items: center; justify-content: space-between; gap: 10px; color: #171717; font-size: 12px; }
-      .start-demo-followup { width: 100%; margin: 0 0 12px; padding: 10px 11px; border: 1px solid #dedbd9; border-radius: 10px; background: #fff; color: #171717; font: inherit; font-size: 12px; }
-      .start-demo-switch-row input { position: absolute; right: 0; width: 44px; height: 24px; margin: 0; opacity: 0; }
-      .start-demo-switch-row i { position: relative; flex: 0 0 44px; height: 23px; border-radius: 99px; background: #e5e5e5; transition: background .18s ease; }
-      .start-demo-switch-row i::after { position: absolute; top: 2px; left: 2px; width: 19px; height: 19px; border-radius: 50%; background: #fff; content: ""; transition: transform .18s ease; }
-      .start-demo-switch-row input:checked + i { background: #16a34a; }
-      .start-demo-switch-row input:checked + i::after { transform: translateX(21px); }
-      .start-demo-switch-row input:focus-visible + i { outline: 2px solid #c4562f; outline-offset: 2px; }
-      .start-demo-save { width: 100%; min-height: 49px; margin-top: 1px; padding: 12px; border: 0; border-radius: 13px; background: #f2703c; color: #fff; font: inherit; font-size: 14px; font-weight: 700; }
-      .start-demo-save:hover { background: #d95e2e; }
-      .start-demo-admin { gap: 12px; }
-      .start-demo-admin-nav { display: grid; grid-template-columns: .65fr 1.5fr .8fr; gap: 3px; padding: 4px; border-radius: 12px; background: #e9e7e5; }
-      .start-demo-admin-nav button { min-height: 36px; padding: 0 3px; border: 0; border-radius: 9px; background: transparent; color: #555; font: inherit; font-size: 10px; font-weight: 700; }
-      .start-demo-admin-nav button.is-active { background: #fff; color: #202221; box-shadow: 0 1px 3px rgba(0,0,0,.12); }
-      .start-demo-notification-form, .start-demo-notification-list { display: grid; gap: 11px; padding: 13px; border: 1px solid #e7e5e4; border-radius: 11px; background: #fff; }
-      .start-demo-notification-form > strong, .start-demo-notification-list > strong { font-size: 13px; }
-      .start-demo-notification-form label { display: grid; gap: 6px; font-size: 11px; font-weight: 700; }
-      .start-demo-notification-form input, .start-demo-notification-form textarea { width: 100%; min-width: 0; padding: 10px; border: 1px solid #d6d3d1; border-radius: 8px; background: #fff; color: #202221; font: inherit; font-size: 12px; }
-      .start-demo-notification-form textarea { resize: vertical; }
-      .start-demo-notification-list > p { margin: 0; color: #777; font-size: 11px; }
-      .start-demo-notification-list article { padding-top: 9px; border-top: 1px solid #e7e5e4; }
-      .start-demo-notification-list article b { font-size: 12px; }
-      .start-demo-notification-list article p { margin: 5px 0; font-size: 11px; line-height: 1.45; overflow-wrap: anywhere; }
-      .start-demo-notification-list article small { color: #777; font-size: 10px; }
-      .start-demo-settings-page { display: grid; gap: 13px; }
-      .start-demo-settings-page > h3 { margin: 12px 0 -7px; font-size: 16px; }
-      .start-demo-settings-page > p { margin: 0 0 7px; color: #777; font-size: 11px; line-height: 1.5; }
-      .start-demo-section-label { margin-top: 5px; color: #777; font-size: 10px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
-      .start-demo-notification-form { gap: 13px; padding: 14px; border-radius: 13px; box-shadow: 0 1px 2px rgba(20,20,20,.1); }
-      .start-demo-notification-form label, .start-demo-notification-list article label { display: grid; gap: 7px; font-size: 12px; font-weight: 500; }
-      .start-demo-notification-form textarea, .start-demo-notification-list textarea { min-height: 58px; padding: 11px; border: 1px solid #e2dfdd; border-radius: 11px; font: inherit; font-size: 11px; }
-      .start-demo-time-fields { display: flex; align-items: center; gap: 7px; }
-      .start-demo-time-fields select { min-width: 56px; height: 36px; padding: 0 9px; border: 1px solid #e2dfdd; border-radius: 10px; background: #fff; color: #202221; font: inherit; font-size: 12px; }
-      .start-demo-weekday-picker { min-width: 0; margin: 0; padding: 0; border: 0; }
-      .start-demo-weekday-picker legend { margin-bottom: 8px; font-size: 12px; }
-      .start-demo-weekday-picker > div { display: flex; flex-wrap: wrap; gap: 6px; }
-      .start-demo-weekday-picker button { min-width: 42px; height: 35px; padding: 0 11px; border: 1px solid #e2dfdd; border-radius: 22px; background: #fff; color: #202221; font: inherit; font-size: 11px; font-weight: 700; }
-      .start-demo-weekday-picker button.is-active { border-color: #202221; background: #202221; color: #fff; }
-      .start-demo-add-notification { justify-self: start; min-height: 38px; padding: 0 15px; border: 0; border-radius: 11px; background: #f2703c; color: #fff; font: inherit; font-size: 11px; font-weight: 700; }
-      .start-demo-notification-list { gap: 12px; padding: 0; border: 0; background: transparent; }
-      .start-demo-notification-list article { display: grid; gap: 12px; padding: 14px; border: 1px solid #e7e5e4; border-radius: 13px; background: #fff; box-shadow: 0 1px 2px rgba(20,20,20,.1); }
-      .start-demo-remove-notification { justify-self: start; border: 0; background: none; color: #a33e2b; font: inherit; font-size: 11px; font-weight: 700; }
-      .start-demo-saved { margin: 0; padding: 9px 11px; border-radius: 8px; background: #edf6e4; color: #355d2c; font-size: 11px; font-weight: 700; }
-      .start-demo-calendar, .start-demo-entry { min-width: 0; padding: 12px; border: 1px solid #e7e5e4; border-radius: 11px; background: #fff; }
-      .start-demo-calendar > strong { display: block; margin-bottom: 11px; font-size: 12px; text-align: center; text-transform: capitalize; }
-      .start-demo-days { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 2px; text-align: center; }
-      .start-demo-days > span, .start-demo-days button { display: grid; place-items: center; min-width: 0; min-height: 27px; padding: 0; border: 0; border-radius: 6px; background: transparent; color: #1c1917; font: inherit; font-size: 10px; }
-      .start-demo-days > span { color: #78716c; }
-      .start-demo-days button { position: relative; }
-      .start-demo-days button.is-selected { background: #202221; color: #fff; }
-      .start-demo-days button i { position: absolute; bottom: 2px; width: 4px; height: 4px; border-radius: 50%; background: #f2703c; }
-      .start-demo-entry strong { font-size: 11px; }
-      .start-demo-entry p { margin: 8px 0 0; font-size: 11px; line-height: 1.45; overflow-wrap: anywhere; }
-      .start-demo-entry img, .start-demo-entry video { display: block; width: 100%; max-height: 130px; margin-top: 10px; border-radius: 7px; object-fit: cover; }
-      .start-demo-entry small { display: block; margin-top: 6px; color: #78716c; font-size: 10px; overflow-wrap: anywhere; }
-      .start-mobile-plans { display: grid; grid-template-columns: 170px 170px minmax(0, 1fr); gap: 32px; align-items: center; margin-top: 48px; padding-top: 28px; border-top: 1px solid rgba(32,34,33,.32); }
-      .start-mobile-plans-copy { order: 1; justify-self: end; }
-      .start-mobile-plans-copy .kicker { display: block; margin-bottom: 10px; }
-      .start-mobile-plans-copy p { max-width: 490px; margin: 0; font-size: 15px; line-height: 1.55; }
-      .start-mobile-plan { display: flex; flex-direction: column; align-items: flex-start; gap: 5px; }
-      .start-mobile-plan > span { font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
-      .start-mobile-plan strong { font-family: "Fraunces", Georgia, serif; font-size: 52px; font-weight: 600; line-height: 1.1; letter-spacing: -.06em; white-space: nowrap; }
-      .start-mobile-plan small { font-size: 13px; }
       .start-contact { padding: 94px 0; }
       .start-contact .contact { padding: 0; }
       .start-contact .contact-panel { align-items: stretch; padding-bottom: 36px; scroll-margin-top: 90px; }
@@ -620,15 +499,6 @@
         .start-item { grid-template-columns: 52px minmax(0, 1fr); column-gap: 17px; }
         .start-item-number { width: 52px; height: 52px; font-size: 18px; }
         .start-item h3 { font-size: 23px; }
-        .start-mobile { padding: 46px 0; }
-        .start-mobile-layout { grid-template-columns: 1fr; gap: 38px; }
-        .start-mobile-price { padding: 24px 0 0; border-left: 0; border-top: 1px solid rgba(32,34,33,.3); }
-        .start-mobile-price strong { font-size: 78px; }
-        .start-mobile-showcase { grid-template-columns: 1fr; gap: 34px; margin-top: 24px; }
-        .start-mobile-features li { grid-template-columns: 1fr; gap: 5px; padding: 14px 0; }
-        .start-mobile-plans { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px 16px; margin-top: 40px; }
-        .start-mobile-plans-copy { grid-column: 1 / -1; justify-self: start; }
-        .start-mobile-plan strong { font-size: 45px; }
         .start-contact { padding: 70px 0; }
         .footer-main { grid-template-columns: 1fr; gap: 24px; }
         .footer-brand { grid-row: auto; }
