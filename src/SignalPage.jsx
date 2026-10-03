@@ -26,7 +26,7 @@ const capabilityStory = {
       ["Add your domain", "Tell Signal which existing website belongs to your business and where it is hosted. Choose Vercel, Cloudflare, or AWS during setup; your website stays where it is."],
       ["Connect your website logs", "At launch, connect your website logs from Vercel, Cloudflare, or AWS. Signal brings AI crawler requests and visits referred by AI tools into one clear view."],
       ["See the activity that matters", "Explore which pages AI crawlers request and which pages people reach from AI tools. You can see whether AI attention is becoming visits, and which parts of your site those visitors actually reach."],
-      ["Find the gaps. Improve your chances.", "Planned answer checks will compare the same buyer questions across AI platforms. If ChatGPT mentions you but Gemini does not, or a competitor appears instead, Signal will examine the observed answers, cited pages, and the competitor's website alongside yours. It will point to likely gaps and suggest specific improvements backed by that evidence. Claude checks are planned as the platform coverage expands."],
+      ["Find the gaps. Improve your chances.", "Signal compares the same buyer questions across ChatGPT, Gemini, and Claude. It shows where competitors appear instead of you and suggests improvements based on the answers and cited pages."],
     ],
   },
   hr: {
@@ -45,7 +45,7 @@ const capabilityStory = {
       ["Dodajte svoju domenu", "Recite Signalu koja postojeća web-stranica pripada Vašoj tvrtki i gdje je smještena. Pri postavljanju odaberite Vercel, Cloudflare ili AWS; Vaša stranica ostaje ondje gdje jest."],
       ["Povežite zapise stranice", "Pri pokretanju povežite zapise svoje web-stranice na platformi Vercel, Cloudflare ili AWS. Signal će na jednom mjestu prikazati zahtjeve AI pretraživača i posjete koji dolaze iz AI alata."],
       ["Pogledajte što je važno", "Otkrijte koje stranice traže AI pretraživači i na koje stranice ljudi dolaze iz AI alata. Vidjet ćete pretvara li se pozornost AI alata u posjete i na koje dijelove Vaše stranice ti posjetitelji doista dolaze."],
-      ["Pronađite razlike. Poboljšajte svoje izglede.", "Planirane provjere odgovora uspoređivat će ista pitanja kupaca među AI platformama. Ako Vas ChatGPT spominje, a Gemini ne, ili se umjesto Vas pojavi konkurent, Signal će pregledati opažene odgovore, citirane stranice i konkurentsku web-stranicu usporedno s Vašom. Pokazat će moguće nedostatke i predložiti konkretna poboljšanja utemeljena na tim opažanjima. Provjere na Claudeu planirane su kako se bude širila podrška za platforme."],
+      ["Pronađite razlike. Poboljšajte svoje izglede.", "Signal uspoređuje ista pitanja kupaca na ChatGPT-u, Geminiju i Claudeu. Pokazuje gdje se umjesto Vas pojavljuju konkurenti i predlaže poboljšanja na temelju odgovora i citiranih stranica."],
     ],
   },
 };
