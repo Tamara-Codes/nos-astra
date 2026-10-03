@@ -1,8 +1,6 @@
 :root:has(.signal-page) { --signal-bg: #101014; --signal-bg-soft: #17171b; --signal-panel: #202024; --signal-panel-raised: #29282d; --signal-line: #39383e; --signal-ink: #f5f2e9; --signal-muted: #a5a3aa; --signal-mango: #ffc24a; --signal-mango-light: #ffd56e; }
 body:has(.signal-page) { background: var(--signal-bg); }
 .signal-site-header { font-family: Manrope, Arial, sans-serif; }
-.signal-wordmark-mark { background: #17171b !important; color: #ffc24a !important; }
-.signal-wordmark-mark svg { width: 33px; height: 33px; }
 .signal-dashboard-logo svg { width: 25px; height: 25px; }
 .signal-hero-image { width: 125%; max-width: none; aspect-ratio: 1.1; margin-left: -10%; }
 .signal-hero-image img { position: absolute; width: 100%; height: 100%; object-fit: cover; object-position: 60% center; mask-image: radial-gradient(ellipse at center, #000 42%, transparent 73%); animation: signal-image-drift 12s ease-in-out infinite alternate; }
@@ -13,11 +11,11 @@ body:has(.signal-page) { background: var(--signal-bg); }
 @media (prefers-reduced-motion: reduce) { .signal-hero-image img, .signal-image-glow { animation: none; } }
 .signal-site-header { position: absolute; z-index: 20; top: 0; left: 0; right: 0; border-bottom: 1px solid rgba(245,242,233,.09); color: var(--signal-ink); }
 .signal-nav { display: flex; align-items: center; justify-content: space-between; min-height: 82px; }
-.signal-wordmark { display: inline-flex; align-items: center; gap: 10px; font-size: 23px; font-weight: 800; line-height: .85; letter-spacing: -.07em; }
-.signal-wordmark > span:last-child { position: relative; display: flex; flex-direction: column; gap: 3px; padding-bottom: 0; }
-.signal-wordmark-mark { display: grid; place-items: center; width: 37px; height: 37px; border-radius: 11px; color: var(--signal-bg); background: var(--signal-mango); font-size: 22px; }
+.signal-wordmark { display: inline-flex; align-items: center; gap: 10px; font-size: 26px; font-weight: 800; line-height: 1; letter-spacing: -1.5px; }
+.signal-wordmark-mark { display: grid; place-items: center; flex: none; width: 39px; height: 39px; margin-right: 3px; border: 1px solid rgba(255,194,74,.45); border-radius: 11px; color: var(--signal-mango); transform: rotate(-13deg); }
+.signal-wordmark-mark svg { width: 30px; height: 30px; }
+.signal-wordmark-name { color: #f7f5ef; }
 .signal-wordmark-dot { color: var(--signal-mango); }
-.signal-wordmark small { position: static; color: #8e8b91; font-size: 7px; font-weight: 700; letter-spacing: .17em; }
 .signal-nav nav, .signal-nav > nav { display: flex; align-items: center; gap: clamp(18px, 3vw, 38px); }
 .signal-nav nav a { color: #c0bec2; font-size: 12px; font-weight: 600; transition: color .2s ease; }
 .signal-nav nav a:hover { color: var(--signal-mango-light); }
