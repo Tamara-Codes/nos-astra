@@ -2,10 +2,10 @@ import React from "react";
 
 const copy = {
   en: {
-    eyebrow: "SIGNAL BY NOS ASTRA", title: "Be the business", titleAccent: "AI recommends", intro: "Understand where your business stands, see which competitors AI recommends, and get practical guidance.", cta: "Create an account", partnerEyebrow: "DEVELOPER PARTNERS", partnerTitle: "We are looking for developers to test Signal.", partnerCopy: "Build or manage websites? Test Signal and tell us what works, what breaks, and what would make it more useful."
+    eyebrow: "SIGNAL BY NOS ASTRA", title: "Be the business", titleAccent: "AI recommends", intro: "Understand where your business stands, see which competitors AI recommends, and get practical guidance.", cta: "Create an account", partnerEyebrow: "DEVELOPMENT PARTNERS", partnerTitle: "We are looking for development partners.", partnerCopy: "We want to build Signal with partners who bring real use cases, practical insight, and feedback as the product takes shape."
   },
   hr: {
-    eyebrow: "SIGNAL BY NOS ASTRA", title: "Budite tvrtka", titleAccent: "koju AI preporučuje", intro: "Saznajte gdje se Vaša tvrtka nalazi, koje konkurente AI preporučuje i što možete poboljšati uz praktične smjernice.", cta: "Izradite račun", partnerEyebrow: "RAZVOJNI PARTNERI", partnerTitle: "Tražimo developere koji će testirati Signal.", partnerCopy: "Izrađujete ili održavate web-stranice? Isprobajte Signal i recite nam što radi dobro, što ne radi i što bi Vam bilo korisnije."
+    eyebrow: "SIGNAL BY NOS ASTRA", title: "Budite tvrtka", titleAccent: "koju AI preporučuje", intro: "Saznajte gdje se Vaša tvrtka nalazi, koje konkurente AI preporučuje i što možete poboljšati uz praktične smjernice.", cta: "Izradite račun", partnerEyebrow: "RAZVOJNI PARTNERI", partnerTitle: "Tražimo razvojne partnere.", partnerCopy: "Želimo razvijati Signal uz partnere koji donose stvarne primjere primjene, praktično iskustvo i povratne informacije dok oblikujemo proizvod."
   }
 };
 
