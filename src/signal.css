@@ -94,6 +94,7 @@ body:has(.signal-page) { background: var(--signal-bg); }
 .signal-how-step:nth-child(even) .signal-how-copy { order: 1; }
 .signal-how-art { position: relative; min-width: 0; aspect-ratio: 1.55; }
 .signal-how-art img { display: block; width: 115%; height: 100%; max-width: none; margin-left: -7.5%; object-fit: contain; mix-blend-mode: lighten; }
+.signal-how-step:nth-child(3) .signal-how-art img { width: 80%; margin-left: 10%; }
 .signal-how-copy { max-width: 500px; padding: 30px 0; }
 .signal-how-index { display: block; margin-bottom: 25px; color: var(--signal-mango); font-size: 11px; font-weight: 800; letter-spacing: .18em; }
 .signal-how-copy h3 { max-width: 480px; margin: 0 0 21px; color: var(--signal-ink); font-size: clamp(30px,3.3vw,46px); font-weight: 570; line-height: 1.1; letter-spacing: -.055em; }
