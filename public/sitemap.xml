@@ -16,6 +16,12 @@
     <loc>https://www.nosastra.co/en/start</loc>
   </url>
   <url>
+    <loc>https://www.nosastra.co/signal</loc>
+  </url>
+  <url>
+    <loc>https://www.nosastra.co/hr/signal</loc>
+  </url>
+  <url>
     <loc>https://www.nosastra.co/hr/privacy.html</loc>
   </url>
 </urlset>
