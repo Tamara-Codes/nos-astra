@@ -65,7 +65,7 @@ export default function SignalPage({ hr }) {
   const s = copy[hr ? "hr" : "en"];
   const story = capabilityStory[hr ? "hr" : "en"];
   const localPreview = ["localhost", "127.0.0.1"].includes(window.location.hostname);
-  const appUrl = (import.meta.env.VITE_SIGNAL_APP_URL || (localPreview ? `${window.location.protocol}//${window.location.hostname}:3105` : "")).replace(/\/$/, "");
+  const appUrl = (import.meta.env.VITE_SIGNAL_APP_URL || (localPreview ? `${window.location.protocol}//${window.location.hostname}:3105` : "https://signal-by-nosastra.vercel.app")).replace(/\/$/, "");
   const signUpUrl = `${appUrl}/auth/sign-up`;
   return <>
     <header className="signal-site-header"><div className="shell signal-nav"><a className="signal-wordmark" href={hr ? "/hr" : "/"} aria-label="Signal by Nos Astra"><span className="signal-wordmark-mark"><BeaconMark /></span><span><span>signal<span className="signal-wordmark-dot">.</span></span><small>BY NOS ASTRA</small></span></a><nav aria-label={hr ? "Glavna navigacija" : "Main navigation"}><a href="#signal-preview">{hr ? "Pregled" : "Product"}</a><a href="#signal-tracks">{hr ? "Mogućnosti" : "Features"}</a><a href="#signal-pricing">{hr ? "Cijene" : "Pricing"}</a><a className="signal-nav-locale" href={hr ? "/signal" : "/hr/signal"}>{hr ? "EN" : "HR"}</a></nav></div></header>
