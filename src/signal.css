@@ -64,7 +64,6 @@ body:has(.signal-page) { background: var(--signal-bg); }
 .signal-art-index { position: absolute; right: 13%; bottom: 8%; color: #77747a; font-size: 8px; font-weight: 800; letter-spacing: .14em; }
 .signal-scroll-cue { position: absolute; left: max(calc((100vw - 1160px)/2), 36px); bottom: 32px; display: flex; align-items: center; gap: 10px; color: #77747a; font-size: 8px; font-weight: 800; letter-spacing: .12em; }
 .signal-scroll-cue span { width: 25px; height: 1px; background: var(--signal-mango); }
-.signal-partners { padding: 108px 0; }
 .signal-capabilities { padding: 114px 0 102px; background: radial-gradient(ellipse at 88% 11%,rgba(255,194,74,.055),transparent 35%),#101014; }
 .signal-capabilities-intro { max-width: 800px; margin-bottom: 75px; }
 .signal-capabilities-intro .kicker { margin: 0 0 21px; }
@@ -95,7 +94,6 @@ body:has(.signal-page) { background: var(--signal-bg); }
 .signal-how-index { display: block; margin-bottom: 25px; color: var(--signal-mango); font-size: 11px; font-weight: 800; letter-spacing: .18em; }
 .signal-how-copy h3 { max-width: 480px; margin: 0 0 21px; color: var(--signal-ink); font-size: clamp(30px,3.3vw,46px); font-weight: 570; line-height: 1.1; letter-spacing: -.055em; }
 .signal-how-copy p { max-width: 500px; margin: 0; color: #b2afb5; font-size: clamp(14px,1.35vw,16px); line-height: 1.85; }
-.signal-partners { background: radial-gradient(ellipse at 92% 12%, rgba(255,194,74,.08), transparent 38%), #151519; }
 .signal-waitlist { padding: 90px 0; background: radial-gradient(ellipse at 10% 0%, rgba(255,194,74,.09), transparent 42%), #19191d; }
 .signal-waitlist-inner { display: grid; grid-template-columns: minmax(0,1fr) minmax(300px,440px); gap: 50px; align-items: center; }
 .signal-waitlist h2 { max-width: 650px; margin: 20px 0 18px; font-size: clamp(38px,4.7vw,60px); line-height: 1.07; letter-spacing: -.06em; }
@@ -111,17 +109,11 @@ body:has(.signal-page) { background: var(--signal-bg); }
 .signal-waitlist-form .signal-primary-cta:disabled { opacity: .65; cursor: progress; }
 .signal-waitlist-status { min-height: 20px; margin: 0; color: #b3c589; font-size: 12px; }
 .signal-waitlist-status.is-error { color: #ffad9b; }
-.signal-partners-inner { display: flex; align-items: center; justify-content: space-between; gap: 50px; }
-.signal-partners-copy { max-width: 750px; }
-.signal-partners-copy .kicker { margin: 0 0 22px; }
-.signal-partners h2 { margin: 0; color: var(--signal-ink); font-size: clamp(39px,4.8vw,62px); font-weight: 700; line-height: 1.05; letter-spacing: -.065em; }
-.signal-partners-copy > p:last-child { max-width: 630px; margin: 25px 0 0; color: #b5b2b9; font-size: clamp(14px,1.4vw,17px); line-height: 1.8; }
-.signal-partners .signal-primary-cta { flex: none; }
 #root:has(.signal-page) .site-footer { --paper: #f5f2e9; border-top: 1px solid #39383e; background: #101014; color: #f5f2e9; }
 #root:has(.signal-page) .site-footer .footer-tagline, #root:has(.signal-page) .site-footer .footer-legal, #root:has(.signal-page) .site-footer .footer-legal-links { color: #929097; }
 @media (max-width: 900px) { .signal-hero { min-height: 0; padding-top: 142px; }.signal-hero-inner { grid-template-columns: 1fr; gap: 5px; }.signal-hero-copy { max-width: 680px; }.signal-hero-art { position: absolute; top: 105px; right: -6%; width: 45%; opacity: .38; }.signal-hero-copy > p:not(.kicker) { max-width: 570px; }.signal-scroll-cue { display: none; }}
 @media (max-width: 900px) { .signal-waitlist-inner { grid-template-columns: 1fr; gap: 24px; }.signal-waitlist-form { max-width: 550px; } }
-@media (max-width: 700px) { .signal-nav { min-height: 70px; }.signal-nav nav { gap: 14px; }.signal-nav nav > a:not(.signal-nav-locale):not(.signal-nav-cta) { display: none; }.signal-nav nav .signal-nav-cta { gap: 10px; padding: 10px 11px; font-size: 9px; }.signal-wordmark { font-size: 21px; }.signal-wordmark-mark { width: 33px; height: 33px; }.signal-hero { padding: 133px 0 70px; }.signal-hero h1 { max-width: 590px; font-size: clamp(48px,11.5vw,68px); }.signal-hero-art { top: 118px; right: -33%; width: 74%; opacity: .25; }.signal-float-card { opacity: .75; }.signal-float-score { right: 10%; }.signal-float-sources { left: 5%; }.signal-proof { gap: 9px; margin-top: 39px; font-size: 8px; }.signal-proof i { width: 14px; }.signal-partners,.signal-capabilities { padding: 75px 0; }.signal-partners-inner { display: block; }.signal-partners h2 { font-size: clamp(36px,9vw,48px); }.signal-partners .signal-primary-cta { margin-top: 27px; } }
+@media (max-width: 700px) { .signal-nav { min-height: 70px; }.signal-nav nav { gap: 14px; }.signal-nav nav > a:not(.signal-nav-locale):not(.signal-nav-cta) { display: none; }.signal-nav nav .signal-nav-cta { gap: 10px; padding: 10px 11px; font-size: 9px; }.signal-wordmark { font-size: 21px; }.signal-wordmark-mark { width: 33px; height: 33px; }.signal-hero { padding: 133px 0 70px; }.signal-hero h1 { max-width: 590px; font-size: clamp(48px,11.5vw,68px); }.signal-hero-art { top: 118px; right: -33%; width: 74%; opacity: .25; }.signal-float-card { opacity: .75; }.signal-float-score { right: 10%; }.signal-float-sources { left: 5%; }.signal-proof { gap: 9px; margin-top: 39px; font-size: 8px; }.signal-proof i { width: 14px; }.signal-capabilities { padding: 75px 0; } }
 @media (max-width: 700px) { .signal-capabilities-intro { margin-bottom: 45px; }.signal-pillar { grid-template-columns: 1fr; gap: 23px; padding: 36px 0 40px; }.signal-pillar-label span { margin-bottom: 12px; }.signal-pillar-label h3 { font-size: clamp(35px,9vw,48px); }.signal-pillar-content > p:not(.signal-pillar-outcome) { font-size: 14px; }.signal-pillar-outcome { margin-top: 19px; } }
 @media (max-width: 700px) { .signal-how { padding: 72px 0 78px; }.signal-how-heading { margin-bottom: 15px; }.signal-how-heading h2 { max-width: 590px; }.signal-how-step { grid-template-columns: 1fr; gap: 0; min-height: 0; padding: 18px 0 42px; }.signal-how-step + .signal-how-step { padding-top: 42px; }.signal-how-step:nth-child(even) .signal-how-art,.signal-how-step:nth-child(even) .signal-how-copy { order: initial; }.signal-how-art { aspect-ratio: 1.55; }.signal-how-copy { padding: 0; }.signal-how-index { margin-bottom: 15px; }.signal-how-copy h3 { margin-bottom: 14px; } }
 @media (max-width: 400px) { .signal-nav nav { gap: 9px; }.signal-nav nav .signal-nav-locale { font-size: 9px; }.signal-hero h1 { font-size: 46px; } }
