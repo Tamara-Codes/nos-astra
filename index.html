@@ -931,6 +931,37 @@
         .lit-tr { grid-template-columns: minmax(0, 1fr) minmax(0, .95fr) minmax(0, 1.1fr) minmax(0, .95fr) 44px 12px; gap: 4px; }
         .lit-table .friday-table { font-size: 11px; }
       }
+
+      /* Labs "How it starts": a panel with ring decoration and three fact circles. */
+      .labs-check { background: var(--ink); }
+      .labs-check-panel { position: relative; isolation: isolate; overflow: hidden; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: clamp(32px, 5vw, 72px); align-items: center; padding: clamp(36px, 5vw, 72px); border: 1px solid var(--line); background: radial-gradient(circle at 82% 50%, rgba(179, 197, 137, .2), transparent 58%), var(--surface); }
+      .labs-check-panel::before, .labs-check-panel::after { content: ""; position: absolute; z-index: -1; top: 50%; border: 1px solid rgba(179, 197, 137, .26); border-radius: 50%; translate: 0 -50%; }
+      .labs-check-panel::before { right: -170px; width: 680px; height: 680px; }
+      .labs-check-panel::after { right: -40px; width: 430px; height: 430px; border-color: rgba(179, 197, 137, .16); }
+      .labs-check-copy .section-copy { margin: 20px 0 32px; }
+      .labs-check .labs-facts { display: flex; justify-content: center; gap: 0; margin: 0; padding: 20px 0 54px; }
+      .labs-check .labs-facts div { display: grid; flex: none; place-content: center; justify-items: center; gap: 7px; width: clamp(140px, 12.5vw, 176px); aspect-ratio: 1; padding: 16px; border: 0; border-radius: 50%; background: #b3c589; color: var(--ink); text-align: center; box-shadow: 0 26px 50px -24px rgba(0, 0, 0, .75); opacity: 0; transform: scale(.55); transition: opacity .5s ease, transform .8s cubic-bezier(.16, 1, .3, 1); transition-delay: calc(var(--i) * 160ms); }
+      .labs-check .labs-facts div + div { margin-left: -18px; }
+      .labs-check .labs-facts div:nth-child(2) { background: #d7d0ae; translate: 0 38px; }
+      .labs-check .labs-facts div:nth-child(3) { background: #c8d8aa; }
+      .labs-check-panel.is-in .labs-facts div { opacity: 1; transform: none; }
+      .labs-check .labs-facts strong { color: var(--ink); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: clamp(22px, 2vw, 28px); font-weight: 700; letter-spacing: -.055em; line-height: 1.02; }
+      .labs-check .labs-facts span { max-width: 12ch; color: rgba(32, 34, 33, .74); font-size: 12.5px; line-height: 1.3; }
+      @media (prefers-reduced-motion: reduce) { .labs-check .labs-facts div { opacity: 1; transform: none; transition: none; } }
+      @media (max-width: 1000px) {
+        .labs-check-panel { grid-template-columns: 1fr; }
+        .labs-check-panel::before { top: auto; bottom: -330px; right: -160px; translate: none; }
+        .labs-check-panel::after { top: auto; bottom: -160px; right: -40px; translate: none; }
+      }
+      @media (max-width: 560px) {
+        .labs-check-panel { padding: 30px 22px 26px; }
+        .labs-check .labs-facts { padding: 6px 0 34px; }
+        .labs-check .labs-facts div { grid-template-columns: none; width: calc((100% + 24px) / 3); padding: 8px; }
+        .labs-check .labs-facts div + div { margin-left: -12px; }
+        .labs-check .labs-facts div:nth-child(2) { translate: 0 26px; }
+        .labs-check .labs-facts strong { font-size: 16px; }
+        .labs-check .labs-facts span { display: none; }
+      }
     </style>
   </head>
   <body>

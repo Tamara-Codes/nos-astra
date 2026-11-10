@@ -310,8 +310,22 @@ function FridayDemo({ label, title, f }) {
     </div>
   </div></div></div>;
 }
+// True once the element has scrolled into view; used for one-off entrance motion.
+function useInView(threshold = 0.35) {
+  const ref = useRef(null);
+  const [inView, setInView] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el || !("IntersectionObserver" in window)) { setInView(true); return; }
+    const observer = new IntersectionObserver(([entry]) => { if (entry.isIntersecting) { setInView(true); observer.disconnect(); } }, { threshold });
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [threshold]);
+  return [ref, inView];
+}
 function LabsPage({ t, hr }) {
   const l = t.labs;
+  const [checkRef, checkInView] = useInView();
   return <main className="labs-page">
     <section className="labs-hero"><div className="shell">
       <p className="kicker">{l.kicker}</p><h1>{l.title}</h1><p className="labs-lead">{l.lead}</p>
@@ -331,10 +345,10 @@ function LabsPage({ t, hr }) {
       <div><p className="kicker">{l.privacyKicker}</p><h2>{l.privacyTitle}</h2><p className="section-copy">{l.privacyIntro}</p></div>
       <div><ul className="labs-privacy-list">{l.privacy.map((item) => <li key={item}>{item}</li>)}</ul><p className="labs-privacy-line">{l.privacyLine}</p></div>
     </div></section>
-    <section className="labs-check"><div className="shell">
-      <div className="section-intro"><p className="kicker">{l.checkKicker}</p><h2>{l.checkTitle}</h2><p className="section-copy">{l.checkCopy}</p></div>
-      <div className="labs-facts">{l.checkFacts.map(([value, label]) => <div key={value}><strong>{value}</strong><span>{label}</span></div>)}</div>
-    </div></section>
+    <section className="labs-check"><div className="shell"><div ref={checkRef} className={`labs-check-panel${checkInView ? " is-in" : ""}`}>
+      <div className="labs-check-copy"><p className="kicker">{l.checkKicker}</p><h2>{l.checkTitle}</h2><p className="section-copy">{l.checkCopy}</p><CalendlyButton label={l.cta} /></div>
+      <div className="labs-facts">{l.checkFacts.map(([value, label], index) => <div key={value} style={{ "--i": index }}><strong>{value}</strong><span>{label}</span></div>)}</div>
+    </div></div></section>
     <section className="founder-section labs-about"><div className="shell founder-layout">
       <div className="portrait"><img src="/tamara-martinovic.webp" width="800" height="800" loading="lazy" alt={l.portraitAlt} /></div>
       <div className="founder-copy"><p className="kicker">{l.aboutKicker}</p><h2>{l.aboutTitle}</h2>{l.about.map((p, index) => <p key={p} className={index === l.about.length - 1 ? "labs-about-closing" : undefined}>{p}</p>)}</div>
