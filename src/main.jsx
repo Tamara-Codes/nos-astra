@@ -383,7 +383,6 @@ function LabsPage({ t, hr }) {
     </div></section>
     <section className="labs-check"><div className="shell"><div ref={checkRef} className={`labs-check-panel${checkInView ? " is-in" : ""}`}>
       <div className="labs-check-copy"><p className="kicker">{l.checkKicker}</p><h2>{l.checkTitle}</h2><p className="section-copy">{l.checkCopy}</p><CalendlyButton label={l.cta} /></div>
-      <div className="labs-check-orbit" aria-hidden="true"><i /></div><div className="labs-check-orbit labs-check-orbit-inner" aria-hidden="true"><i /></div>
       <div className="labs-facts">{l.checkFacts.map(([value, label], index) => <div key={value} style={{ "--i": index }}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{FACT_ICONS[index]}</svg><strong>{value}</strong><span>{label}</span></div>)}</div>
     </div></div></section>
     <section className="founder-section labs-about"><div className="shell founder-layout">
