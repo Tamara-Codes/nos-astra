@@ -51,7 +51,7 @@ const content = {
       privacyLine: "Privacy isn't a reason to skip AI. It's a reason to do it right.",
       checkKicker: "How it starts", checkTitle: "The Lab AI Check.", checkCopy: "A free 20-minute call. We look at where your team's hours go and whether there's something worth automating.", checkFacts: [["20 min", "A short video call"], ["Free", "No cost to you"], ["No obligation", "You decide what happens next"]],
       aboutKicker: "About me", aboutTitle: "I didn't leave science. I just switched sides.",
-      about: ["I'm Tamara Martinović. I have a PhD and spent about 15 years in biomedical research. At 35, I started coding.", "Today I'm an AI engineer and software developer. I run Nos Astra, a small software and AI studio in Njivice, Croatia. When you work with Nos Astra, you work directly with me.", "Now I build the tools I wish we'd had."],
+      about: ["I'm Tamara Martinović. I have a PhD and spent about 15 years in biomedical research. At 35, I started coding.", "Today I'm an AI engineer and software developer. I run Nos Astra, a small software and AI studio in Croatia. When you work with Nos Astra, you work directly with me.", "Now I build the tools I wish we'd had."],
       portraitAlt: "Tamara Martinović",
       finalKicker: "Lab AI Check", finalTitle: "Let's look at where your team's hours go.", finalCopy: "Book a free 20-minute call. If you'd rather write, email me and I'll reply personally.", emailLabel: "Email"
     }
@@ -100,7 +100,7 @@ const content = {
       privacyLine: "Privatnost nije razlog da odustanete od AI-ja. Razlog je da ga koristite kako treba.",
       checkKicker: "Kako počinjemo", checkTitle: "Lab AI provjera.", checkCopy: "Besplatan razgovor od 20 minuta. Zajedno ćemo pogledati na što Vaš tim troši sate i postoji li nešto što se isplati automatizirati.", checkFacts: [["20 min", "Kratki video poziv"], ["Besplatno", "Bez ikakvog troška"], ["Bez obveze", "Vi odlučujete o sljedećem koraku"]],
       aboutKicker: "O meni", aboutTitle: "Nisam napustila znanost. Samo sam promijenila stranu.",
-      about: ["Ja sam Tamara Martinović. Doktorirala sam i oko 15 godina radila u biomedicinskim istraživanjima. S 35 godina počela sam programirati.", "Danas sam AI inženjerka i softverska developerica te vodim Nos Astru, mali softverski i AI studio u Njivicama. Kada radite s Nos Astrom, radite izravno sa mnom.", "Sada izrađujem alate koje sam tada željela imati."],
+      about: ["Ja sam Tamara Martinović. Doktorirala sam i oko 15 godina radila u biomedicinskim istraživanjima. S 35 godina počela sam programirati.", "Danas sam AI inženjerka i softverska developerica te vodim Nos Astru, mali softverski i AI studio u Hrvatskoj. Kada radite s Nos Astrom, radite izravno sa mnom.", "Sada izrađujem alate koje sam tada željela imati."],
       portraitAlt: "Tamara Martinović",
       finalKicker: "Lab AI provjera", finalTitle: "Pogledajmo na što Vaš tim troši sate.", finalCopy: "Rezervirajte besplatan razgovor od 20 minuta. Ako Vam je draže pisati, pošaljite mi e-mail i rado ću Vam osobno odgovoriti.", emailLabel: "E-mail"
     }
