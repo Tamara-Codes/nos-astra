@@ -713,6 +713,224 @@
       }
       /* "Laboratoriji" makes the Croatian nav longer; tighten it on narrow phones. */
       @media (max-width: 400px) { .nav { gap: 6px; } .brand { gap: 8px; } .brand-name { font-size: 20px; } .nav-links a:not(.contact-link):not(.language-link) { padding-inline: 4px; } .nav-links .language-link { width: 38px; } }
+
+      /* Labs: pinned "Friday afternoon" scroll story. The wrapper is several screens tall,
+         the stage sticks, and [data-step] (0-3, set from scroll in FridayDemo) drives the motion. */
+      .friday { position: relative; height: 290vh; margin-top: 8px; }
+      .friday-pin { position: sticky; top: 0; display: flex; align-items: center; height: 100vh; height: 100svh; padding-top: 68px; overflow: hidden; }
+      .friday-layout { display: grid; grid-template-columns: minmax(0, .78fr) minmax(0, 1.22fr); gap: clamp(32px, 5vw, 76px); align-items: center; }
+      .friday-copy h3 { color: var(--paper); font-family: "Fraunces", Georgia, serif; font-size: clamp(30px, 3.4vw, 46px); font-weight: 600; line-height: 1.06; letter-spacing: -.04em; }
+      .friday-progress { height: 2px; margin-top: 26px; background: var(--line); }
+      .friday-progress i { display: block; height: 100%; background: var(--olive); transform: scaleX(var(--p, 0)); transform-origin: left; }
+      .friday-steps li:first-child { border-top: 0; }
+      .friday-hint { float: left; color: var(--olive); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; transition: opacity .4s ease; }
+      .friday[data-step="3"] .friday-hint, .friday.is-static .friday-hint, .friday.is-static .friday-progress { opacity: 0; }
+      @media (prefers-reduced-motion: no-preference) { .friday-hint { animation: friday-nudge 1.6s ease-in-out infinite; } }
+      @keyframes friday-nudge { 50% { transform: translateY(4px); } }
+      .friday-steps { display: grid; margin: 0; padding: 0; list-style: none; }
+      .friday-steps li { position: relative; padding: 15px 0 15px 18px; border-top: 1px solid var(--line); opacity: .32; transition: opacity .45s ease; }
+      .friday-steps li::before { content: ""; position: absolute; left: 0; top: 15px; bottom: 15px; width: 2px; background: var(--olive); transform: scaleY(0); transform-origin: top; transition: transform .5s cubic-bezier(.16, 1, .3, 1); }
+      .friday-steps li.is-done { opacity: .55; }
+      .friday-steps li.is-active { opacity: 1; }
+      .friday-steps li.is-active::before { transform: none; }
+      .friday-steps span { display: block; margin-bottom: 6px; color: var(--olive); font-size: 11px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+      .friday-steps p { margin: 0; color: var(--paper); font-size: 15.5px; line-height: 1.55; }
+
+      .friday-stage { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 58px minmax(0, 1fr); align-items: center; }
+      .friday-file { border: 1px solid var(--line); border-radius: 10px; background: #161817; color: var(--muted); font-family: ui-monospace, "Cascadia Mono", Consolas, Menlo, monospace; font-size: 13px; line-height: 1.95; overflow: hidden; box-shadow: 0 30px 60px -34px rgba(0, 0, 0, .8); transition: opacity .6s ease, transform .6s cubic-bezier(.16, 1, .3, 1); }
+      .friday-bar { display: flex; align-items: center; gap: 6px; padding: 10px 14px; border-bottom: 1px solid var(--line); font-size: 11px; }
+      .friday-bar i { width: 8px; height: 8px; border-radius: 50%; background: rgba(241, 239, 232, .2); }
+      .friday-bar span { margin-left: 8px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+      .friday-lines { padding: 12px 16px 16px; }
+      .friday-junk { max-height: 1.95em; overflow: hidden; white-space: nowrap; color: rgba(175, 177, 169, .6); transition: max-height .55s cubic-bezier(.16, 1, .3, 1), opacity .35s ease; }
+      .friday-row { display: grid; grid-template-columns: 4ch 8ch minmax(0, 1fr); white-space: pre; }
+      .friday-val { display: inline-grid; }
+      .friday-raw, .friday-clean { grid-area: 1 / 1; transition: opacity .35s ease, transform .45s cubic-bezier(.16, 1, .3, 1); transition-delay: calc(var(--i) * 70ms); }
+      .friday-clean { opacity: 0; transform: translateY(8px); color: var(--olive-light); font-weight: 700; }
+      .friday-row.is-flag .friday-clean { color: #e6c997; }
+      .friday-row.is-flag .friday-clean::before { content: "⚑ "; }
+
+      .friday-tool { position: relative; display: grid; place-items: center; height: 58px; }
+      .friday-tool svg { width: 34px; height: 34px; overflow: visible; opacity: .35; transition: opacity .4s ease, transform .6s cubic-bezier(.16, 1, .3, 1); }
+      .friday-tool .mark-body { fill: var(--olive); }
+      .friday-tool b { position: absolute; left: 50%; top: 50%; width: 7px; height: 7px; margin: -3px 0 0 -3px; border-radius: 2px; background: var(--olive-light); opacity: 0; }
+
+      .friday-report { position: relative; padding: 22px 22px 20px; border-radius: 6px; background: var(--paper); color: var(--ink); box-shadow: 0 30px 60px -30px rgba(0, 0, 0, .7); opacity: .42; transform: translateY(12px) scale(.97); transition: opacity .6s ease, transform .6s cubic-bezier(.16, 1, .3, 1); }
+      .friday-report-kicker { margin: 0 0 6px; color: #596c3b; font-size: 10px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+      .friday-report h4 { margin: 0; font-family: "Fraunces", Georgia, serif; font-size: 21px; font-weight: 600; letter-spacing: -.03em; line-height: 1.15; }
+      .friday-table { display: grid; margin-top: 14px; font-size: 13px; }
+      .friday-tr { display: grid; grid-template-columns: 1fr 1fr; align-items: center; padding: 5px 0; border-top: 1px solid rgba(32, 34, 33, .14); }
+      .friday-th { border-top: 0; color: #6b6f69; font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+      .friday-slot { position: relative; min-height: 1.5em; }
+      .friday-slot::before { content: ""; position: absolute; left: 0; top: 50%; width: 52%; height: 7px; margin-top: -3px; border-radius: 2px; background: rgba(32, 34, 33, .1); transition: opacity .3s ease; transition-delay: calc(var(--i, 0) * 90ms); }
+      .friday-cell { display: inline-block; font-weight: 700; font-variant-numeric: tabular-nums; opacity: 0; transform: translateX(-18px); transition: opacity .4s ease, transform .5s cubic-bezier(.16, 1, .3, 1); transition-delay: calc(var(--i) * 90ms); }
+      .friday-cell.is-flag { color: #9a5b1c; font-weight: 600; }
+      .friday-cell.is-flag::before { content: "⚑ "; }
+      .friday-chart { display: flex; align-items: flex-end; gap: 8px; height: 78px; margin-top: 14px; padding-top: 10px; border-top: 1px solid rgba(32, 34, 33, .14); }
+      .friday-chart i { flex: 1; height: calc(var(--h) * 100%); border-radius: 2px 2px 0 0; background: #7f9556; transform: scaleY(0); transform-origin: bottom; transition: transform .7s cubic-bezier(.16, 1, .3, 1); transition-delay: calc(var(--i) * 80ms); }
+      .friday-chart i.is-flag { background: repeating-linear-gradient(45deg, rgba(154, 91, 28, .5) 0 4px, transparent 4px 8px); }
+      .friday-stamp { position: absolute; top: 12px; right: 14px; margin: 0; padding: 5px 10px; border-radius: 99px; background: var(--ink); color: var(--olive-light); font-size: 11px; font-weight: 700; opacity: 0; transform: scale(.8); transition: opacity .35s ease .5s, transform .5s cubic-bezier(.16, 1, .3, 1) .5s; }
+      .friday-caption { grid-column: 1 / -1; margin: 18px 0 0; color: rgba(175, 177, 169, .7); font-size: 11px; letter-spacing: .04em; text-align: right; }
+
+      /* Step 1 and later: junk lines fold away, values are cleaned. */
+      .friday:not([data-step="0"]) .friday-junk { max-height: 0; opacity: 0; }
+      .friday:not([data-step="0"]) .friday-raw { opacity: 0; transform: translateY(-8px); }
+      .friday:not([data-step="0"]) .friday-clean { opacity: 1; transform: none; }
+      .friday[data-step="1"] .friday-tool svg, .friday[data-step="2"] .friday-tool svg { opacity: 1; }
+      /* Step 2 and later: values land in the template. */
+      .friday[data-step="2"] .friday-file, .friday[data-step="3"] .friday-file { opacity: .5; transform: scale(.97); }
+      .friday[data-step="2"] .friday-report, .friday[data-step="3"] .friday-report { opacity: 1; transform: none; }
+      .friday[data-step="2"] .friday-cell, .friday[data-step="3"] .friday-cell { opacity: 1; transform: none; }
+      .friday[data-step="2"] .friday-slot::before, .friday[data-step="3"] .friday-slot::before { opacity: 0; }
+      /* Step 3: chart and stamp. */
+      .friday[data-step="3"] .friday-chart i { transform: none; }
+      .friday[data-step="3"] .friday-stamp { opacity: 1; transform: none; }
+      .friday[data-step="3"] .friday-tool svg { opacity: .8; transform: rotate(72deg) scale(1.15); }
+      @media (prefers-reduced-motion: no-preference) {
+        .friday[data-step="1"] .friday-tool svg, .friday[data-step="2"] .friday-tool svg { animation: friday-spin 2.6s linear infinite; }
+        .friday[data-step="2"] .friday-tool b { animation: friday-fly 1s cubic-bezier(.45, 0, .55, 1) infinite; animation-delay: calc(var(--i) * 240ms); }
+      }
+      @keyframes friday-spin { to { transform: rotate(1turn); } }
+      @keyframes friday-fly { 0% { transform: translate(-46px, calc((var(--i) - 1.5) * 12px)); opacity: 0; } 25%, 70% { opacity: 1; } 100% { transform: translate(46px, calc((var(--i) - 1.5) * -6px)); opacity: 0; } }
+
+      .labs-example-grid-single { grid-template-columns: minmax(0, 760px); }
+      /* Reduced motion: no pinning, show the finished state. */
+      .friday.is-static { height: auto; margin-top: 48px; }
+      .friday.is-static .friday-pin { position: static; height: auto; padding-top: 0; }
+      .friday.is-static .friday-steps li { opacity: 1; }
+      @media (max-width: 800px) {
+        .friday { height: 280vh; }
+        .friday-pin { align-items: flex-start; padding-top: 86px; }
+        .friday-layout { grid-template-columns: 1fr; gap: 22px; }
+        .friday-copy h3 { font-size: 28px; }
+        .friday-progress { margin-top: 16px; }
+        .friday-steps { min-height: 148px; }
+        .friday-steps li { display: none; padding: 12px 0 0 14px; }
+        .friday-steps li::before { top: 12px; bottom: 0; }
+        .friday-steps li.is-active { display: block; }
+        .friday-steps p { font-size: 15px; }
+        /* One panel at a time: the export for steps 0-1, the report for 2-3. */
+        .friday-stage { grid-template-columns: 1fr; }
+        .friday-file, .friday-report { grid-area: 1 / 1; align-self: start; }
+        .friday-tool { display: none; }
+        .friday-report { opacity: 0; }
+        .friday[data-step="2"] .friday-file, .friday[data-step="3"] .friday-file { opacity: 0; transform: translateY(-16px) scale(.97); }
+        .friday-caption { margin-top: 12px; }
+        .friday.is-static .friday-steps { min-height: 0; }
+        .friday.is-static .friday-steps li { display: block; padding-bottom: 12px; }
+        .friday.is-static .friday-file, .friday.is-static .friday-report { grid-area: auto; }
+        .friday.is-static .friday-file { opacity: 1; transform: none; margin-bottom: 16px; }
+      }
+
+      /* Friday demo, clearer version: one large step at a time, labelled panels, slower pace. */
+      .friday { height: 420vh; }
+      .friday-copy h3 { font-size: clamp(20px, 1.9vw, 26px); color: var(--muted); }
+      .friday-progress { margin-top: 22px; }
+      .friday-tabs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin: 12px 0 0; padding: 0; list-style: none; font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+      .friday-tabs li { color: var(--muted); opacity: .45; transition: opacity .4s ease, color .4s ease; }
+      .friday-tabs li.is-done { opacity: .8; }
+      .friday-tabs li.is-active { color: var(--olive); opacity: 1; }
+      .friday-steps { margin-top: 44px; }
+      .friday-step { grid-area: 1 / 1; opacity: 0; transform: translateY(22px); transition: opacity .35s ease, transform .5s cubic-bezier(.16, 1, .3, 1); }
+      .friday-step.is-active { opacity: 1; transform: none; transition: opacity .6s ease .25s, transform .7s cubic-bezier(.16, 1, .3, 1) .25s; }
+      .friday-step span { color: var(--olive); font-size: 12px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+      .friday-step h4 { margin: 12px 0 16px; color: var(--paper); font-family: "Fraunces", Georgia, serif; font-size: clamp(40px, 4.4vw, 62px); font-weight: 600; line-height: 1; letter-spacing: -.045em; }
+      .friday-step p { max-width: 26em; margin: 0; color: var(--paper); font-size: clamp(18px, 1.55vw, 22px); line-height: 1.5; }
+      .friday-stage { grid-template-rows: auto auto auto; row-gap: 0; }
+      .friday-label { grid-row: 1; margin: 0 0 12px; color: var(--muted); font-size: 11px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; transition: color .4s ease, opacity .4s ease; }
+      .friday-label-file { grid-column: 1; }
+      .friday-label-report { grid-column: 3; opacity: .5; }
+      .friday-file { grid-column: 1; grid-row: 2; }
+      .friday-tool { grid-column: 2; grid-row: 2; }
+      .friday-report { grid-column: 3; grid-row: 2; }
+      .friday-caption { grid-row: 3; }
+      .friday[data-step="0"] .friday-label-file, .friday[data-step="1"] .friday-label-file { color: var(--olive); }
+      .friday[data-step="2"] .friday-label-report, .friday[data-step="3"] .friday-label-report { color: var(--olive); opacity: 1; }
+      .friday[data-step="0"] .friday-junk { color: #d59a8a; }
+      .friday[data-step="0"] .friday-raw { color: #e6c997; }
+      .friday-raw, .friday-clean { transition-duration: .5s, .6s; transition-delay: calc(var(--i) * 130ms); }
+      .friday-cell { transition-duration: .5s, .65s; transition-delay: calc(.2s + var(--i) * 160ms); }
+      .friday-slot::before { transition-delay: calc(.2s + var(--i, 0) * 160ms); }
+      .friday-chart i { transition-delay: calc(.15s + var(--i) * 120ms); }
+      .friday.is-static .friday-tabs { display: none; }
+      .friday.is-static .friday-step { grid-area: auto; opacity: 1; transform: none; margin-bottom: 26px; }
+      .friday.is-static .friday-step h4 { font-size: 30px; }
+      @media (max-width: 800px) {
+        .friday { height: 400vh; }
+        .friday-pin { padding-top: 78px; }
+        .friday-layout { gap: 16px; }
+        .friday-copy h3 { font-size: 17px; }
+        .friday-progress { margin-top: 12px; }
+        .friday-tabs { font-size: 10px; letter-spacing: .06em; }
+        .friday-steps { margin-top: 14px; min-height: 146px; }
+        .friday-step h4 { margin: 6px 0 8px; font-size: 32px; }
+        .friday-step p { font-size: 16px; line-height: 1.45; }
+        .friday-label { grid-area: 1 / 1; margin-bottom: 8px; }
+        .friday-label-report { opacity: 0; }
+        .friday[data-step="2"] .friday-label-file, .friday[data-step="3"] .friday-label-file { opacity: 0; }
+        .friday-file, .friday-report { grid-area: 2 / 1; }
+        .friday-file { font-size: 12px; line-height: 1.8; }
+        .friday.is-static .friday-label { display: none; }
+        .friday.is-static .friday-file, .friday.is-static .friday-report { grid-area: auto; }
+      }
+
+      /* Literature demo: a PDF page on the left, the extracted table on the right. */
+      .lit .friday-stage { grid-template-columns: minmax(0, .82fr) 54px minmax(0, 1.18fr); }
+      .lit-page { position: relative; overflow: visible; padding: 0; border: 0; border-radius: 4px; background: #e9e6dc; color: #2c2f2d; font-family: Georgia, "Times New Roman", serif; font-size: 13px; line-height: 1.6; box-shadow: 7px 7px 0 -1px #cfccc1, 14px 14px 0 -2px #b9b6ab, 0 30px 60px -30px rgba(0, 0, 0, .8); }
+      .lit-page-head { display: flex; justify-content: space-between; gap: 12px; padding: 10px 16px; border-bottom: 1px solid rgba(32, 34, 33, .16); color: #6b6f69; font-family: ui-monospace, Consolas, Menlo, monospace; font-size: 10.5px; }
+      .lit-body { display: grid; gap: 7px; padding: 16px 16px 20px; }
+      .lit-heading { margin: 0 0 2px; font-weight: 700; font-size: 13px; }
+      .lit-body p { margin: 4px 0; }
+      .lit-line { display: block; height: 6px; border-radius: 2px; background: rgba(32, 34, 33, .13); }
+      .lit-body sub { font-size: .7em; }
+      .lit-body mark { padding: 1px 2px; border-radius: 2px; color: inherit; background: linear-gradient(#c6d69d, #c6d69d) left / 0% 100% no-repeat; outline: 2px solid transparent; outline-offset: 1px; transition: background-size .6s cubic-bezier(.16, 1, .3, 1), outline-color .4s ease; transition-delay: calc(var(--i) * 260ms); }
+      .lit:not([data-step="0"]) .lit-body mark { background-size: 100% 100%; font-weight: 700; }
+      .lit-table { padding: 20px 18px 18px; }
+      .lit-table .friday-table { font-size: 12px; }
+      .lit-tr { display: grid; grid-template-columns: 1.05fr 1fr 1.1fr 1fr 52px 18px; gap: 6px; align-items: center; padding: 7px 0; border-top: 1px solid rgba(32, 34, 33, .14); }
+      .lit-tr.friday-th { border-top: 0; font-size: 9.5px; letter-spacing: .06em; }
+      .lit .friday-slot::before { width: 78%; transition-delay: calc(.2s + var(--i, 0) * 110ms); }
+      .lit .friday-cell { font-weight: 600; white-space: nowrap; transition-delay: calc(.2s + var(--i) * 110ms); }
+      .lit-pageref { padding: 1px 6px; border-radius: 99px; background: rgba(127, 149, 86, .22); color: #45552a; font-size: 11px; outline: 2px solid transparent; outline-offset: 1px; }
+      .lit-check { color: #5d7335; font-weight: 700; opacity: 0; transform: scale(.4); transition: opacity .35s ease, transform .5s cubic-bezier(.16, 1, .3, 1); transition-delay: calc(.5s + var(--i) * 450ms); }
+      .lit-check.is-flag { color: #9a5b1c; }
+      .lit-note { margin: 14px 0 0; color: #6b6f69; font-size: 10.5px; white-space: pre-wrap; opacity: 0; transition: opacity .5s ease 1.6s; }
+      /* Step 3: the page comes back so a value can be checked against it. */
+      .lit[data-step="3"] .friday-file { opacity: 1; transform: none; }
+      .lit[data-step="3"] .lit-key, .lit[data-step="3"] .lit-tr.is-key .lit-pageref { outline-color: #7f9556; transition-delay: .3s; }
+      .lit[data-step="3"] .lit-check { opacity: 1; transform: none; }
+      .lit[data-step="3"] .lit-note { opacity: 1; }
+      .lit[data-step="3"] .lit-tr.is-key { background: rgba(127, 149, 86, .14); box-shadow: -6px 0 0 rgba(127, 149, 86, .14), 6px 0 0 rgba(127, 149, 86, .14); transition: background .5s ease .3s, box-shadow .5s ease .3s; }
+      @media (max-width: 800px) {
+        .lit .friday-stage { grid-template-columns: 1fr; }
+        .lit-page { margin-right: 12px; }
+        .lit[data-step="3"] .friday-file { opacity: 0; transform: translateY(-16px) scale(.97); }
+        .lit-table { padding: 18px 14px 16px; }
+        .lit-tr { grid-template-columns: 1fr .95fr 1fr .95fr 46px 14px; gap: 4px; }
+        .lit-table .friday-table { font-size: 11.5px; }
+        .lit.is-static .friday-file { opacity: 1; transform: none; margin: 0 12px 30px 0; }
+      }
+
+      /* Literature demo fit: give the table more room and keep every column inside the card. */
+      .lit .friday-stage { grid-template-columns: minmax(0, .7fr) 44px minmax(0, 1.3fr); }
+      .lit-body mark { white-space: nowrap; }
+      .lit-tr { grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr) minmax(0, 1.2fr) minmax(0, .95fr) 46px 14px; gap: 5px; }
+      .lit-table .friday-table { font-size: 11.5px; }
+      .lit .friday-slot { min-width: 0; overflow: hidden; }
+      .lit .friday-slot:has(.lit-pageref) { overflow: visible; }
+      .lit .friday-cell:not(.lit-pageref) { display: block; overflow: hidden; text-overflow: ellipsis; }
+      .lit-pageref { padding: 1px 5px; font-size: 10.5px; }
+      .lit-note { white-space: normal; }
+      @media (min-width: 801px) and (max-width: 1100px) {
+        .friday-layout { grid-template-columns: minmax(0, .62fr) minmax(0, 1.38fr); gap: 36px; }
+        .friday-step h4 { font-size: 40px; }
+        .friday-step p { font-size: 17px; }
+      }
+      @media (max-width: 800px) {
+        .lit .friday-stage { grid-template-columns: 1fr; }
+        .lit-tr { grid-template-columns: minmax(0, 1fr) minmax(0, .95fr) minmax(0, 1.1fr) minmax(0, .95fr) 44px 12px; gap: 4px; }
+        .lit-table .friday-table { font-size: 11px; }
+      }
     </style>
   </head>
   <body>

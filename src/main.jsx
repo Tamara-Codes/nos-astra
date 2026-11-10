@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
@@ -44,6 +44,8 @@ const content = {
         ["Instrument data", "The Friday afternoon person.", ["Every lab has someone who spends Friday afternoon copying instrument exports into Excel. Export, clean, copy, paste, chart, repeat.", "A small tool can pick up the files, pull out the values and fill in the template. It runs on the lab computer, so the data never leaves the building."]],
         ["Literature", "Literature tables you can check in seconds.", ["Ask AI to extract the compound, target, assay and reported potency from each paper into one table, with the page number for every value. Then each number can be checked in seconds.", "AI is a fast, slightly overconfident student. It gives you a great first draft, but you always check the work."]]
       ],
+      friday: { steps: [["Export", "Every lab has someone who spends Friday afternoon copying instrument exports into Excel. Export, clean, copy, paste, chart, repeat."], ["Clean", "A small tool picks up the files and pulls out the values. Anything odd is flagged, not guessed."], ["Fill", "The values go straight into your report template."], ["Done", "The chart draws itself. It all runs on the lab computer, so the data never leaves the building."]], file: "plate_export_friday.csv", template: "Your template", report: "Weekly assay report", sample: "Sample", flag: "check", done: "Report filled", hint: "Keep scrolling", stepLabel: "Step", fileLabel: "Instrument export", reportLabel: "Your report", caption: "Illustration with example data" },
+      literature: { steps: [["Papers", "A stack of PDFs. The numbers you need are buried somewhere in each one."], ["Find", "AI reads each paper and finds the compound, target, assay and reported potency."], ["Extract", "Every value goes into one table, with the page number it came from."], ["Check", "Each number can be checked against its page in seconds. AI is a fast, slightly overconfident student: a great first draft, but you always check the work."]], file: "paper_03.pdf", fileLabel: "Paper (PDF)", reportLabel: "Your table", template: "First draft", tableTitle: "Literature table", cols: ["Compound", "Target", "Assay", "IC50", "Page"], rows: [["Cmpd A", "Target X", "Biochem.", "38 nM", "p. 7"], ["Cmpd B", "Target X", "Cell-based", "120 nM", "p. 4"], ["Cmpd C", "Target Y", "Biochem.", "4.1 µM", "p. 12"]], note: "✓ checked against the page   ⚑ needs a second look" },
       privacyKicker: "Privacy and lab data", privacyTitle: "“Can we even use AI with our lab data?”", privacyIntro: "It's the first thing lab managers ask, and it's a fair question. This is how I approach it.",
       privacy: ["A lot of lab automation doesn't need AI at all. It runs on your own systems.", "When AI does read something, the sensitive parts are removed first.", "Business plans with clear data terms, not free chatbots.", "For really sensitive work, a local model, so nothing leaves the building."],
       privacyLine: "Privacy isn't a reason to skip AI. It's a reason to do it right.",
@@ -91,6 +93,8 @@ const content = {
         ["Podaci s instrumenata", "Petak poslijepodne u Excelu.", ["U svakom laboratoriju postoji netko tko petak poslijepodne provodi kopirajući podatke s instrumenata u Excel. Izvoz, čišćenje, kopiranje, lijepljenje, graf i sve ispočetka.", "Mali alat može sam preuzeti datoteke, izvući vrijednosti i ispuniti predložak. Radi na laboratorijskom računalu, pa podaci nikada ne napuštaju zgradu."]],
         ["Literatura", "Tablice iz literature koje provjerite u nekoliko sekundi.", ["AI iz svakog rada može izvući spoj, metu, vrstu testa i objavljenu potentnost u jednu tablicu, uz broj stranice za svaku vrijednost. Tako se svaki broj može provjeriti u nekoliko sekundi.", "AI je brz, pomalo presamouvjeren student. Napravit će odličnu prvu verziju, ali njegov rad uvijek treba provjeriti."]]
       ],
+      friday: { steps: [["Izvoz", "U svakom laboratoriju postoji netko tko petak poslijepodne provodi kopirajući podatke s instrumenata u Excel. Izvoz, čišćenje, kopiranje, lijepljenje, graf i sve ispočetka."], ["Čišćenje", "Mali alat sam preuzima datoteke i izvlači vrijednosti. Sve neobično označi, ne pogađa."], ["Unos", "Vrijednosti idu izravno u Vaš predložak izvještaja."], ["Gotovo", "Graf se nacrta sam. Sve radi na laboratorijskom računalu, pa podaci nikada ne napuštaju zgradu."]], file: "plate_export_petak.csv", template: "Vaš predložak", report: "Tjedni izvještaj testa", sample: "Uzorak", flag: "provjeriti", done: "Izvještaj ispunjen", hint: "Pomičite dalje", stepLabel: "Korak", fileLabel: "Izvoz s instrumenta", reportLabel: "Vaš izvještaj", caption: "Ilustracija s primjerom podataka" },
+      literature: { steps: [["Radovi", "Hrpa PDF-ova. Brojevi koji Vam trebaju skriveni su negdje u svakom od njih."], ["Pronalazak", "AI čita svaki rad i pronalazi spoj, metu, vrstu testa i objavljenu potentnost."], ["Izdvajanje", "Svaka vrijednost ide u jednu tablicu, uz broj stranice s koje je preuzeta."], ["Provjera", "Svaki se broj može provjeriti na svojoj stranici u nekoliko sekundi. AI je brz, pomalo presamouvjeren student: napravit će odličnu prvu verziju, ali njegov rad uvijek treba provjeriti."]], file: "rad_03.pdf", fileLabel: "Rad (PDF)", reportLabel: "Vaša tablica", template: "Prva verzija", tableTitle: "Tablica iz literature", cols: ["Spoj", "Meta", "Test", "IC50", "Str."], rows: [["Spoj A", "Meta X", "Biokem.", "38 nM", "str. 7"], ["Spoj B", "Meta X", "Stanični", "120 nM", "str. 4"], ["Spoj C", "Meta Y", "Biokem.", "4,1 µM", "str. 12"]], note: "✓ provjereno na stranici   ⚑ treba još jednom pogledati" },
       privacyKicker: "Privatnost i laboratorijski podaci", privacyTitle: "„Smijemo li uopće koristiti AI s našim podacima?”", privacyIntro: "To je prvo pitanje koje postave voditelji laboratorija, i sasvim je opravdano. Ovako mu pristupam.",
       privacy: ["Velik dio laboratorijske automatizacije uopće ne treba AI. Radi na Vašim vlastitim sustavima.", "Kada AI ipak nešto čita, osjetljivi dijelovi najprije se uklanjaju.", "Poslovni planovi s jasnim uvjetima korištenja podataka, a ne besplatni chatbotovi.", "Za zaista osjetljiv posao, lokalni model, tako da ništa ne napušta zgradu."],
       privacyLine: "Privatnost nije razlog da odustanete od AI-ja. Razlog je da ga koristite kako treba.",
@@ -211,6 +215,101 @@ function AudienceDoors({ t, hr }) {
 function CalendlyButton({ label, dark = false }) {
   return <a className={`hero-cta${dark ? " hero-cta-dark" : ""}`} href={CALENDLY_URL} target="_blank" rel="noopener noreferrer"><span className="hero-cta-face">{label}</span></a>;
 }
+// Example data for the Friday demo: [well, sample, raw export text, cleaned value, bar height].
+const FRIDAY_ROWS = [["A1", "STD 1", " 0,112 ;", "0.112", 0.15], ["A2", "STD 2", "0,248;", "0.248", 0.33], ["A3", "STD 3", "0,497 ;;", "0.497", 0.66], ["A4", "S-014", "  0,731", "0.731", 0.97], ["A5", "S-015", "0,402;", "0.402", 0.53], ["A6", "S-016", "OVER;", null, 1]];
+// Pinned scroll story: the section is several screens tall, the stage sticks, and the
+// scroll position picks one of four steps. CSS does the motion from [data-step].
+function usePinnedSteps() {
+  const ref = useRef(null);
+  const [step, setStep] = useState(0);
+  const [isStatic, setIsStatic] = useState(false);
+  useEffect(() => {
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) { setIsStatic(true); setStep(3); return; }
+    let frame = 0;
+    const update = () => { frame = 0; const el = ref.current; if (!el) return; const rect = el.getBoundingClientRect(); const lead = innerHeight * 0.2; const progress = Math.min(1, Math.max(0, (lead - rect.top) / (rect.height - innerHeight + lead))); const bounds = [0, 0.2, 0.47, 0.74, 1]; const current = progress < bounds[1] ? 0 : progress < bounds[2] ? 1 : progress < bounds[3] ? 2 : 3; el.style.setProperty("--p", ((current + (progress - bounds[current]) / (bounds[current + 1] - bounds[current])) / 4).toFixed(3)); setStep(current); };
+    const onScroll = () => { if (!frame) frame = requestAnimationFrame(update); };
+    addEventListener("scroll", onScroll, { passive: true }); addEventListener("resize", onScroll); update();
+    return () => { removeEventListener("scroll", onScroll); removeEventListener("resize", onScroll); cancelAnimationFrame(frame); };
+  }, []);
+  return { ref, step, isStatic };
+}
+const STAR_PATH = "M 32 2 Q 35.99 15.99 39.64 21.48 L 60.53 22.73 Q 48.46 30.85 44.36 36.02 L 49.63 56.27 Q 38.18 47.3 32 45 L 14.37 56.27 Q 19.36 42.61 19.64 36.02 L 3.47 22.73 Q 18.01 23.26 24.36 21.48 Z";
+function StoryTool() { return <div className="friday-tool"><svg viewBox="0 0 64 64"><path className="mark-body" d={STAR_PATH} /></svg>{[0, 1, 2, 3].map((chip) => <b key={chip} style={{ "--i": chip }} />)}</div>; }
+function StoryCopy({ label, title, steps, stepLabel, step }) {
+  return <div className="friday-copy">
+    <p className="kicker">{label}</p><h3>{title}</h3>
+    <div className="friday-progress"><i /></div>
+    <ol className="friday-tabs">{steps.map(([name], index) => <li key={name} className={index === step ? "is-active" : index < step ? "is-done" : undefined}>{name}</li>)}</ol>
+    <div className="friday-steps">{steps.map(([name, text], index) => <div key={name} className={`friday-step${index === step ? " is-active" : ""}`}><span>{stepLabel} {index + 1} / {steps.length}</span><h4>{name}</h4><p>{text}</p></div>)}</div>
+  </div>;
+}
+// Literature story: values are highlighted on a PDF page, land in a table with their
+// page number, then get checked. Reuses the Friday layout and [data-step] mechanics.
+function LiteratureDemo({ label, title, f, shared }) {
+  const { ref, step, isStatic } = usePinnedSteps();
+  const bars = (widths) => widths.map((width, index) => <i className="lit-line" style={{ width: `${width}%` }} key={index} />);
+  return <div ref={ref} className={`friday lit${isStatic ? " is-static" : ""}`} data-step={step}><div className="friday-pin"><div className="shell friday-layout">
+    <StoryCopy label={label} title={title} steps={f.steps} stepLabel={shared.stepLabel} step={step} />
+    <div className="friday-stage" aria-hidden="true">
+      <p className="friday-label friday-label-file">{f.fileLabel}</p><p className="friday-label friday-label-report">{f.reportLabel}</p>
+      <div className="friday-file lit-page">
+        <div className="lit-page-head"><span>{f.file}</span><span>{f.rows[0][4]}</span></div>
+        <div className="lit-body">
+          <p className="lit-heading">3.2 Results</p>
+          {bars([96, 88, 93])}
+          <p>In the <mark style={{ "--i": 2 }}>biochemical assay</mark>, <mark style={{ "--i": 0 }}>Compound A</mark> inhibited <mark style={{ "--i": 1 }}>Target X</mark> with an IC<sub>50</sub> of <mark className="lit-key" style={{ "--i": 3 }}>38 nM</mark> (Table 2).</p>
+          {bars([91, 97, 62])}
+          {bars([94, 86, 90, 48])}
+        </div>
+      </div>
+      <StoryTool />
+      <div className="friday-report lit-table">
+        <p className="friday-report-kicker">{f.template}</p>
+        <h4>{f.tableTitle}</h4>
+        <div className="friday-table">
+          <div className="lit-tr friday-th">{f.cols.map((col) => <span key={col}>{col}</span>)}<span /></div>
+          {f.rows.map((row, rowIndex) => <div className={`lit-tr${rowIndex === 0 ? " is-key" : ""}`} key={row[0]}>
+            {row.map((value, colIndex) => <span className="friday-slot" style={{ "--i": rowIndex * 5 + colIndex }} key={colIndex}><span className={`friday-cell${colIndex === 4 ? " lit-pageref" : ""}`} style={{ "--i": rowIndex * 5 + colIndex }}>{value}</span></span>)}
+            <span className={`lit-check${rowIndex === 2 ? " is-flag" : ""}`} style={{ "--i": rowIndex }}>{rowIndex === 2 ? "⚑" : "✓"}</span>
+          </div>)}
+        </div>
+        <p className="lit-note">{f.note}</p>
+      </div>
+      <p className="friday-caption"><span className="friday-hint">{shared.hint} ↓</span>{shared.caption}</p>
+    </div>
+  </div></div></div>;
+}
+function FridayDemo({ label, title, f }) {
+  const { ref, step, isStatic } = usePinnedSteps();
+  return <div ref={ref} className={`friday${isStatic ? " is-static" : ""}`} data-step={step}><div className="friday-pin"><div className="shell friday-layout">
+    <StoryCopy label={label} title={title} steps={f.steps} stepLabel={f.stepLabel} step={step} />
+    <div className="friday-stage" aria-hidden="true">
+      <p className="friday-label friday-label-file">{f.fileLabel}</p><p className="friday-label friday-label-report">{f.reportLabel}</p>
+      <div className="friday-file">
+        <div className="friday-bar"><i /><i /><i /><span>{f.file}</span></div>
+        <div className="friday-lines">
+          <div className="friday-junk">## Reader export v3 ;;;;</div>
+          <div className="friday-junk">Run;Friday;User: lab2;;</div>
+          <div className="friday-junk">Well;Sample;OD450;;</div>
+          {FRIDAY_ROWS.map(([well, sample, raw, clean], index) => <div className={`friday-row${clean ? "" : " is-flag"}`} style={{ "--i": index }} key={well}><span className="friday-well">{well};</span><span>{sample};</span><span className="friday-val"><span className="friday-raw">{raw}</span><span className="friday-clean">{clean || f.flag}</span></span></div>)}
+          <div className="friday-junk">-- end of plate --;;</div>
+        </div>
+      </div>
+      <StoryTool />
+      <div className="friday-report">
+        <p className="friday-report-kicker">{f.template}</p>
+        <h4>{f.report}</h4>
+        <div className="friday-table">
+          <div className="friday-tr friday-th"><span>{f.sample}</span><span>OD450</span></div>
+          {FRIDAY_ROWS.map(([well, sample, , clean], index) => <div className="friday-tr" key={well}><span>{sample}</span><span className="friday-slot"><span className={`friday-cell${clean ? "" : " is-flag"}`} style={{ "--i": index }}>{clean || f.flag}</span></span></div>)}
+        </div>
+        <div className="friday-chart">{FRIDAY_ROWS.map(([well, , , clean, height], index) => <i key={well} className={clean ? undefined : "is-flag"} style={{ "--i": index, "--h": height }} />)}</div>
+        <p className="friday-stamp">✓ {f.done}</p>
+      </div>
+      <p className="friday-caption"><span className="friday-hint">{f.hint} ↓</span>{f.caption}</p>
+    </div>
+  </div></div></div>;
+}
 function LabsPage({ t, hr }) {
   const l = t.labs;
   return <main className="labs-page">
@@ -224,8 +323,10 @@ function LabsPage({ t, hr }) {
     </div></section>
     <section className="labs-examples"><div className="shell">
       <div className="section-intro"><p className="kicker">{l.examplesKicker}</p><h2>{l.examplesTitle}</h2></div>
-      <div className="labs-example-grid">{l.examples.map(([label, title, paragraphs]) => <article className="labs-example" key={title}><p className="kicker">{label}</p><h3>{title}</h3>{paragraphs.map((p) => <p key={p}>{p}</p>)}</article>)}</div>
-    </div></section>
+    </div>
+      <FridayDemo label={l.examples[0][0]} title={l.examples[0][1]} f={l.friday} />
+      <LiteratureDemo label={l.examples[1][0]} title={l.examples[1][1]} f={l.literature} shared={l.friday} />
+    </section>
     <section className="labs-privacy"><div className="shell labs-privacy-layout">
       <div><p className="kicker">{l.privacyKicker}</p><h2>{l.privacyTitle}</h2><p className="section-copy">{l.privacyIntro}</p></div>
       <div><ul className="labs-privacy-list">{l.privacy.map((item) => <li key={item}>{item}</li>)}</ul><p className="labs-privacy-line">{l.privacyLine}</p></div>
