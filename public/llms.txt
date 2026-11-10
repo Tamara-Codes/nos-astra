@@ -1,23 +1,39 @@
 # Nos Astra
 
-> Nos Astra is an independent software and AI studio in Croatia. It builds websites, custom business tools and practical AI solutions for small businesses.
+> Nos Astra is a small, independent software and AI studio in Njivice, Croatia. It helps lab teams use AI and automation, runs practical AI workshops, and builds websites and business tools for small businesses.
 
 Founder: Tamara Martinovic, PhD — https://tamara.rocks
 Contact: hello@nosastra.co
 
-## Work
+## Pages
 
-- Two business websites
-- A custom business application
-- A custom company sales presentation
-- Welcome Book (https://welcomebook.eu): a QR-code digital guest guide for apartments, villas and holiday homes, used by paying accommodation businesses.
+- [Home](https://www.nosastra.co/): the studio and its three areas of work.
+- [AI for labs](https://www.nosastra.co/labs): AI training for scientists, automations for lab data, literature and reports, and small custom tools for lab and life-science teams (pharma, biotech, CROs, testing and QC labs). Starts with a free 20-minute Lab AI Check.
+- [Start](https://www.nosastra.co/en/start): a launch package for new businesses (website, basic SEO, business card design, business email setup and a quote app).
+- [Privacy policy](https://www.nosastra.co/privacy.html)
+
+## AI for labs
+
+Tamara spent about 15 years in biomedical research before she started coding at 35. She now builds AI and automation for lab teams. Typical work: turning instrument exports into cleaned values in a report template, extracting literature tables from PDFs with a page reference for every value, and small internal tools. Privacy approach: much lab automation needs no AI and runs on the lab's own systems; sensitive parts are removed before AI reads anything; business plans with clear data terms rather than free chatbots; a local model for really sensitive work.
+
+Book a free Lab AI Check: https://calendly.com/tamara-nosastra/lab-ai-check
+
+## AI workshops and training
+
+Practical AI workshops for teens and adults run through Tamara's academy: https://www.thessia.academy
+
+## Websites and business tools
+
+Websites, custom business tools and automations for small businesses, plus the Start package for new businesses.
 
 ## Notes
 
-Clients work directly with Tamara from the first conversation through to the finished product. Nos Astra starts with the business problem and builds the smallest useful solution.
+Clients work directly with Tamara from the first conversation through to the finished product. Nos Astra starts with the problem and builds the smallest useful solution.
 
 ## Hrvatski
 
-Nos Astra je neovisni softverski i AI studio u Hrvatskoj. Izrađuje web-stranice, prilagođene poslovne alate i praktična AI rješenja za mala poduzeća.
+Nos Astra je mali, neovisni softverski i AI studio u Hrvatskoj. Pomaže laboratorijskim timovima uvesti AI i automatizaciju, održava praktične AI radionice te izrađuje web stranice i poslovne alate za mala poduzeća.
 
-Hrvatska verzija web-stranice dostupna je na https://www.nosastra.co/hr.
+- Početna: https://www.nosastra.co/hr
+- AI za laboratorije: https://www.nosastra.co/hr/labs
+- Start: https://www.nosastra.co/start

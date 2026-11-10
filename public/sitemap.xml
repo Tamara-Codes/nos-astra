@@ -4,10 +4,13 @@
     <loc>https://www.nosastra.co/</loc>
   </url>
   <url>
-    <loc>https://www.nosastra.co/privacy.html</loc>
+    <loc>https://www.nosastra.co/hr</loc>
   </url>
   <url>
-    <loc>https://www.nosastra.co/hr</loc>
+    <loc>https://www.nosastra.co/labs</loc>
+  </url>
+  <url>
+    <loc>https://www.nosastra.co/hr/labs</loc>
   </url>
   <url>
     <loc>https://www.nosastra.co/start</loc>
@@ -16,10 +19,7 @@
     <loc>https://www.nosastra.co/en/start</loc>
   </url>
   <url>
-    <loc>https://www.nosastra.co/signal</loc>
-  </url>
-  <url>
-    <loc>https://www.nosastra.co/hr/signal</loc>
+    <loc>https://www.nosastra.co/privacy.html</loc>
   </url>
   <url>
     <loc>https://www.nosastra.co/hr/privacy.html</loc>
