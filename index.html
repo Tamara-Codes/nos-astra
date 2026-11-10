@@ -1027,6 +1027,35 @@
         .labs-card-body { padding: 38px 26px 28px; }
         .labs-card-number { left: 24px; }
       }
+
+      /* Labs hero: a slowly turning molecule on the right, with a glow and drifting particles. */
+      .labs-hero { position: relative; isolation: isolate; overflow: hidden; background: radial-gradient(ellipse at 78% 46%, rgba(179, 197, 137, .2), transparent 46%), radial-gradient(ellipse at 10% 100%, rgba(179, 197, 137, .07), transparent 40%), var(--ink); }
+      .labs-hero .shell { position: relative; z-index: 1; }
+      .labs-hero-art { position: absolute; z-index: 0; top: 50%; right: max(-50px, calc((100vw - 1200px) / 2 - 80px)); width: clamp(340px, 37vw, 560px); translate: 0 -47%; pointer-events: none; }
+      .labs-hero-art svg { display: block; width: 100%; height: auto; overflow: visible; }
+      .mol-scroll { transform-origin: 250px 255px; transform: rotate(calc(var(--s, 0) * 70deg)); }
+      .mol-spin { transform-origin: 250px 255px; }
+      .mol-bond { stroke: rgba(241, 239, 232, .34); stroke-width: 3.500; stroke-linecap: round; }
+      .mol-atom { transform-box: fill-box; transform-origin: center; filter: drop-shadow(0 12px 14px rgba(0, 0, 0, .45)); }
+      .mol-dust { fill: var(--olive-light); opacity: .5; }
+      @media (prefers-reduced-motion: no-preference) {
+        .mol-spin { animation: mol-spin 80s linear infinite; }
+        .mol-atom { animation: mol-pulse 5s ease-in-out infinite; animation-delay: calc(var(--i) * -0.700s); }
+        .mol-dust { animation: mol-drift 9s ease-in-out infinite; animation-delay: calc(var(--i) * -1.700s); }
+      }
+      @keyframes mol-spin { to { transform: rotate(1turn); } }
+      @keyframes mol-pulse { 50% { transform: scale(1.14); } }
+      @keyframes mol-drift { 0%, 100% { transform: translate(0, 0); opacity: .2; } 50% { transform: translate(14px, -26px); opacity: .7; } }
+      @media (min-width: 1001px) {
+        .labs-hero h1 { max-width: min(760px, 60%); font-size: clamp(42px, 4.900vw, 68px); }
+        .labs-lead { max-width: min(560px, 52%); }
+      }
+      @media (max-width: 1000px) {
+        .labs-hero-art { right: -110px; width: 400px; opacity: .4; }
+      }
+      @media (max-width: 800px) {
+        .labs-hero-art { top: 60px; right: -110px; width: 300px; translate: none; opacity: .38; }
+      }
     </style>
   </head>
   <body>

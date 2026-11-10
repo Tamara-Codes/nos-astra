@@ -310,6 +310,23 @@ function FridayDemo({ label, title, f }) {
     </div>
   </div></div></div>;
 }
+// Decorative molecule for the Labs hero: a generic ring with side chains, not a real compound.
+// Atoms are [x, y, radius, colour index]; bonds are pairs of atom indexes.
+const MOLECULE_ATOMS = [[328, 205, 27, 0], [328, 295, 22, 2], [250, 340, 26, 1], [172, 295, 22, 0], [172, 205, 25, 2], [250, 160, 22, 1], [404, 162, 24, 1], [462, 208, 33, 0], [412, 84, 19, 2], [250, 432, 31, 2], [98, 162, 33, 1], [42, 214, 17, 0]];
+const MOLECULE_BONDS = [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 0], [0, 6], [6, 7], [6, 8], [2, 9], [4, 10], [10, 11]];
+const MOLECULE_DUST = [[70, 60, 5], [470, 70, 4], [488, 330, 6], [120, 420, 4], [372, 468, 5], [28, 320, 3]];
+const LABS_MOLECULE = <>
+  <defs>
+    <radialGradient id="atom0" cx="34%" cy="28%" r="80%"><stop offset="0" stopColor="#dbe8ba" /><stop offset=".55" stopColor="#b3c589" /><stop offset="1" stopColor="#8fa567" /></radialGradient>
+    <radialGradient id="atom1" cx="34%" cy="28%" r="80%"><stop offset="0" stopColor="#f3edd2" /><stop offset=".55" stopColor="#d7d0ae" /><stop offset="1" stopColor="#b5ad88" /></radialGradient>
+    <radialGradient id="atom2" cx="34%" cy="28%" r="80%"><stop offset="0" stopColor="#eaf3d4" /><stop offset=".55" stopColor="#c8d8aa" /><stop offset="1" stopColor="#a3b783" /></radialGradient>
+  </defs>
+  {MOLECULE_DUST.map(([x, y, r], index) => <circle className="mol-dust" cx={x} cy={y} r={r} style={{ "--i": index }} key={`dust${index}`} />)}
+  <g className="mol-scroll"><g className="mol-spin">
+    {MOLECULE_BONDS.map(([from, to]) => <line className="mol-bond" x1={MOLECULE_ATOMS[from][0]} y1={MOLECULE_ATOMS[from][1]} x2={MOLECULE_ATOMS[to][0]} y2={MOLECULE_ATOMS[to][1]} key={`${from}-${to}`} />)}
+    {MOLECULE_ATOMS.map(([x, y, r, colour], index) => <circle className="mol-atom" cx={x} cy={y} r={r} fill={`url(#atom${colour})`} style={{ "--i": index }} key={index} />)}
+  </g></g>
+</>;
 // Line illustrations for the three Labs services: training, automation, custom tools.
 const LABS_ART = [
   <>
@@ -359,8 +376,18 @@ function LabsPage({ t, hr }) {
   const l = t.labs;
   const [checkRef, checkInView] = useInView();
   const [helpRef, helpInView] = useInView(0.2);
+  const heroRef = useRef(null);
+  // The hero molecule turns a little faster as the hero scrolls away (--s goes 0 to 1).
+  useEffect(() => {
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    let frame = 0;
+    const update = () => { frame = 0; const el = heroRef.current; if (el) el.style.setProperty("--s", Math.min(1, Math.max(0, scrollY / el.offsetHeight)).toFixed(3)); };
+    const onScroll = () => { if (!frame) frame = requestAnimationFrame(update); };
+    addEventListener("scroll", onScroll, { passive: true }); update();
+    return () => { removeEventListener("scroll", onScroll); cancelAnimationFrame(frame); };
+  }, []);
   return <main className="labs-page">
-    <section className="labs-hero"><div className="shell">
+    <section className="labs-hero" ref={heroRef}><div className="labs-hero-art" aria-hidden="true"><svg viewBox="0 0 520 520">{LABS_MOLECULE}</svg></div><div className="shell">
       <p className="kicker">{l.kicker}</p><h1>{l.title}</h1><p className="labs-lead">{l.lead}</p>
       <div className="labs-actions"><CalendlyButton label={l.cta} /><p className="labs-note">{l.ctaNote}</p></div>
     </div></section>
