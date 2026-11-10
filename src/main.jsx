@@ -310,6 +310,32 @@ function FridayDemo({ label, title, f }) {
     </div>
   </div></div></div>;
 }
+// Line illustrations for the three Labs services: training, automation, custom tools.
+const LABS_ART = [
+  <>
+    <rect x="62" y="10" width="116" height="62" rx="6" />
+    <g className="art-star"><path className="art-fill" d={STAR_PATH} transform="translate(76 24) scale(.38)" /></g>
+    <path className="art-write" d="M112 28h52M112 41h38M112 54h46" />
+    <path d="M120 72v9" />
+    <circle cx="84" cy="97" r="8" /><circle cx="120" cy="99" r="8" /><circle cx="156" cy="97" r="8" />
+    <path d="M68 124a16 16 0 0 1 32 0M104 126a16 16 0 0 1 32 0M140 124a16 16 0 0 1 32 0" />
+  </>,
+  <>
+    <rect x="24" y="28" width="52" height="68" rx="5" /><path d="M35 44h30M35 55h22M35 66h30M35 77h18" />
+    <path className="art-flow" d="M84 62h20M136 62h20" />
+    <g className="art-star"><path className="art-fill" d={STAR_PATH} transform="translate(105 47) scale(.47)" /></g>
+    <rect x="164" y="28" width="52" height="68" rx="5" /><path d="M174 42h22" />
+    <path className="art-bars" d="M177 86V72M188 86V60M199 86V68M208 86V54" />
+  </>,
+  <>
+    <rect x="46" y="12" width="148" height="98" rx="8" /><path d="M46 33h148" />
+    <circle className="art-fill" cx="59" cy="22.5" r="2.4" /><circle className="art-fill" cx="68" cy="22.5" r="2.4" /><circle className="art-fill" cx="77" cy="22.5" r="2.4" />
+    <rect x="60" y="46" width="36" height="19" rx="9.5" /><circle className="art-fill art-knob" cx="70" cy="55.500" r="5.6" />
+    <path d="M108 55.500h70" />
+    <path d="M60 86h62" /><circle className="art-dot" cx="98" cy="86" r="5" />
+    <rect className="art-fill art-button" x="138" y="74" width="40" height="24" rx="6" /><path className="art-tick" d="M150 86l5.500 5.500 9.500-10.500" />
+  </>
+];
 // Icons for the Lab AI Check facts: a clock, a crossed-out euro, an open padlock.
 const FACT_ICONS = [
   <><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3.2 2" /></>,
@@ -332,6 +358,7 @@ function useInView(threshold = 0.35) {
 function LabsPage({ t, hr }) {
   const l = t.labs;
   const [checkRef, checkInView] = useInView();
+  const [helpRef, helpInView] = useInView(0.2);
   return <main className="labs-page">
     <section className="labs-hero"><div className="shell">
       <p className="kicker">{l.kicker}</p><h1>{l.title}</h1><p className="labs-lead">{l.lead}</p>
@@ -339,7 +366,10 @@ function LabsPage({ t, hr }) {
     </div></section>
     <section className="labs-help"><div className="shell">
       <div className="section-intro"><p className="kicker">{l.helpKicker}</p><h2>{l.helpTitle}</h2></div>
-      <div className="labs-card-grid">{l.help.map(([title, copy], index) => <article className="labs-card" key={title}><span className="studio-service-number">0{index + 1}</span><h3>{title}</h3><p>{copy}</p></article>)}</div>
+      <div ref={helpRef} className={`labs-card-grid${helpInView ? " is-in" : ""}`}>{l.help.map(([title, copy], index) => <article className="labs-card" style={{ "--i": index }} key={title}>
+        <div className="labs-card-art" aria-hidden="true"><svg viewBox="0 0 240 124">{LABS_ART[index]}</svg></div>
+        <div className="labs-card-body"><span className="labs-card-number">0{index + 1}</span><h3>{title}</h3><p>{copy}</p></div>
+      </article>)}</div>
     </div></section>
     <section className="labs-examples"><div className="shell">
       <div className="section-intro"><p className="kicker">{l.examplesKicker}</p><h2>{l.examplesTitle}</h2></div>
