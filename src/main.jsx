@@ -310,6 +310,12 @@ function FridayDemo({ label, title, f }) {
     </div>
   </div></div></div>;
 }
+// Icons for the Lab AI Check facts: a clock, a crossed-out euro, an open padlock.
+const FACT_ICONS = [
+  <><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3.2 2" /></>,
+  <><circle cx="12" cy="12" r="9" /><path d="M15 9.3a3.5 3.5 0 1 0 0 5.4M8 11h4.6M8 13.2h4.6" /><path d="M5.6 5.6l12.8 12.8" /></>,
+  <><rect x="5" y="11" width="14" height="9" rx="2" /><path d="M8 11V7.6a4 4 0 0 1 7.7-1.5" /></>
+];
 // True once the element has scrolled into view; used for one-off entrance motion.
 function useInView(threshold = 0.35) {
   const ref = useRef(null);
@@ -347,7 +353,8 @@ function LabsPage({ t, hr }) {
     </div></section>
     <section className="labs-check"><div className="shell"><div ref={checkRef} className={`labs-check-panel${checkInView ? " is-in" : ""}`}>
       <div className="labs-check-copy"><p className="kicker">{l.checkKicker}</p><h2>{l.checkTitle}</h2><p className="section-copy">{l.checkCopy}</p><CalendlyButton label={l.cta} /></div>
-      <div className="labs-facts">{l.checkFacts.map(([value, label], index) => <div key={value} style={{ "--i": index }}><strong>{value}</strong><span>{label}</span></div>)}</div>
+      <div className="labs-check-orbit" aria-hidden="true"><i /></div><div className="labs-check-orbit labs-check-orbit-inner" aria-hidden="true"><i /></div>
+      <div className="labs-facts">{l.checkFacts.map(([value, label], index) => <div key={value} style={{ "--i": index }}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{FACT_ICONS[index]}</svg><strong>{value}</strong><span>{label}</span></div>)}</div>
     </div></div></section>
     <section className="founder-section labs-about"><div className="shell founder-layout">
       <div className="portrait"><img src="/tamara-martinovic.webp" width="800" height="800" loading="lazy" alt={l.portraitAlt} /></div>
