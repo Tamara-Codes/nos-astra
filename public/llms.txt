@@ -9,7 +9,6 @@ Contact: hello@nosastra.co
 
 - [Home](https://www.nosastra.co/): the studio and its three areas of work.
 - [AI for labs](https://www.nosastra.co/labs): AI training for scientists, automations for lab data, literature and reports, and small custom tools for lab and life-science teams (pharma, biotech, CROs, testing and QC labs). Starts with a free 20-minute Lab AI Check.
-- [Start](https://www.nosastra.co/en/start): a launch package for new businesses (website, basic SEO, business card design, business email setup and a quote app).
 - [Privacy policy](https://www.nosastra.co/privacy.html)
 
 ## AI for labs
@@ -24,7 +23,7 @@ Practical AI workshops for teens and adults run through Tamara's academy: https:
 
 ## Websites and business tools
 
-Websites, custom business tools and automations for small businesses, plus the Start package for new businesses.
+Websites, custom business tools and automations for small businesses.
 
 ## Notes
 
@@ -36,4 +35,3 @@ Nos Astra je mali, neovisni softverski i AI studio u Hrvatskoj. Pomaže laborato
 
 - Početna: https://www.nosastra.co/hr
 - AI za laboratorije: https://www.nosastra.co/hr/labs
-- Start: https://www.nosastra.co/start

@@ -4,14 +4,14 @@ Website for **Nos Astra**, a small software and AI studio in Croatia: [nosastra.
 
 The site has three audiences: lab teams (`/labs`), AI workshops (which link out to
 [thessia.academy](https://www.thessia.academy)), and small businesses (the homepage
-services and the Start package). Every page exists in English and Croatian.
+services). Every page exists in English and Croatian.
 
 ## Stack
 
 - [Vite 6](https://vite.dev) + [React 19](https://react.dev)
 - No CSS framework. All styles are hand-written in `index.html`
 - Self-hosted Fraunces in `public/fonts/`; Manrope from Google Fonts
-- Contact and Start forms post to [Formspree](https://formspree.io)
+- Contact forms post to [Formspree](https://formspree.io)
 - Vercel Web Analytics and Speed Insights
 - Deployed on Vercel
 
@@ -50,15 +50,15 @@ Routing is done by hand in `App()` in `src/main.jsx`, based on `window.location.
 | ---------------- | ------------------- | -------------------------------------------- |
 | `/`              | `/hr`               | Homepage: the studio and its three audiences |
 | `/labs`          | `/hr/labs`          | AI for labs                                  |
-| `/en/start`      | `/start`            | Start, a launch package for new businesses   |
 | `/privacy.html`  | `/hr/privacy.html`  | Privacy policy                               |
 
-Note the Start exception: Croatian is the default at `/start` and English lives at
-`/en/start` (`/hr/start` redirects to `/start`). Use the `localPath(path, hr)` helper to
+Use the `localPath(path, hr)` helper to
 build language-aware links. The language flag in the header switches to the same page in
 the other language.
 
 `/signal` and `/hr/signal` (a retired product) permanently redirect to `/` and `/hr`.
+The retired Start URLs `/start` and `/hr/start` permanently redirect to `/hr`;
+`/en/start` redirects to `/`.
 
 ## Editing content
 

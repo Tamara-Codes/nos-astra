@@ -363,49 +363,6 @@
       .footer-legal-links a:hover { color: var(--paper); }
       .site-footer a:focus-visible { outline: 2px solid var(--olive-light); outline-offset: 3px; }
 
-      .start-hero { padding: 160px 0 92px; background: radial-gradient(ellipse at 80% 20%, rgba(179,197,137,.12), transparent 42%), var(--ink); }
-      .start-hero-grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(310px, .75fr); gap: clamp(44px, 8vw, 120px); align-items: center; }
-      .start-hero h1 { max-width: 780px; font-size: clamp(48px, 6.5vw, 82px); }
-      .start-intro { max-width: 660px; margin: 28px 0 34px; color: var(--muted); font-size: 19px; line-height: 1.65; }
-      .start-price-card { padding: 34px; border: 1px solid rgba(179,197,137,.38); background: linear-gradient(145deg, rgba(179,197,137,.1), rgba(41,44,42,.82)); }
-      .start-price-card .kicker { margin-bottom: 10px; }
-      .start-price { margin: 0; color: var(--paper); font-family: "Fraunces", Georgia, serif; font-size: clamp(54px, 6vw, 76px); letter-spacing: -.055em; }
-      .start-price-card > p:not(.kicker):not(.start-price) { color: var(--muted); line-height: 1.5; }
-      .start-price-card ul { display: grid; gap: 13px; margin: 28px 0; padding: 0; list-style: none; }
-      .start-price-card li { display: flex; gap: 10px; align-items: start; color: var(--paper); font-size: 14px; line-height: 1.45; }
-      .start-price-card li::before { content: "✓"; color: var(--olive); font-weight: 700; }
-      .start-included { padding: 100px 0; background: #242725; }
-      .start-included .section-intro .kicker { display: none; }
-      .start-item-grid { display: grid; gap: 36px; max-width: 900px; margin-top: 80px; }
-      .start-item { display: grid; grid-template-columns: 72px minmax(0, 1fr); grid-template-areas: "number title" "number description"; column-gap: 28px; align-content: start; align-items: start; }
-      .start-item-number { grid-area: number; display: grid; place-items: center; width: 72px; height: 72px; border-radius: 50%; color: var(--ink); background: var(--olive); font-family: "Fraunces", Georgia, serif; font-size: 24px; font-weight: 600; letter-spacing: -.04em; }
-      .start-item:nth-child(2) .start-item-number { background: #e6c997; }
-      .start-item:nth-child(3) .start-item-number { background: #c4d7df; }
-      .start-item:nth-child(4) .start-item-number { background: #d4b9d1; }
-      .start-item:nth-child(5) .start-item-number { background: #c8d6ad; }
-      .start-item:nth-child(6) .start-item-number { background: #e4a998; }
-      .start-item h3 { grid-area: title; margin: 0 0 7px; color: var(--paper); font-family: "Fraunces", Georgia, serif; font-size: 27px; font-weight: 600; letter-spacing: -.035em; }
-      .start-item p { grid-area: description; margin: 0; }
-      .start-item p, .start-email-note { color: var(--muted); line-height: 1.65; }
-      .start-email-note { max-width: 850px; margin: 26px 0 0; font-size: 13px; }
-      .start-contact { padding: 94px 0; }
-      .start-contact .contact { padding: 0; }
-      .start-contact .contact-panel { align-items: stretch; padding-bottom: 36px; scroll-margin-top: 90px; }
-      .start-contact .contact-panel .kicker { color: rgba(32,34,33,.64); }
-      .start-contact .contact-panel h2 { max-width: 530px; }
-      .start-contact-copy { display: flex; flex-direction: column; min-width: 0; }
-      .start-form-hint { grid-column: 1 / -1; margin: -8px 0 0; font-size: 12px; line-height: 1.5; }
-      .start-direct-contact { display: grid; gap: 14px; margin-top: auto; padding-top: 28px; border-top: 1px solid rgba(32,34,33,.25); transform: translateY(-2cm); }
-      .start-direct-contact a { display: flex; align-items: center; gap: 15px; min-width: 0; color: var(--ink); text-decoration: none; }
-      .start-direct-contact a:hover .start-contact-icon { background: var(--ink); color: var(--olive); }
-      .start-direct-contact a:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; border-radius: 6px; }
-      .start-contact-icon { display: grid; flex: 0 0 44px; place-items: center; width: 44px; height: 44px; border: 1px solid rgba(32,34,33,.3); border-radius: 12px; background: rgba(255,255,255,.2); transition: background .2s ease, color .2s ease; }
-      .start-contact-icon svg { width: 21px; height: 21px; }
-      .start-direct-contact a > span:last-child { display: grid; gap: 3px; min-width: 0; }
-      .start-direct-contact small { color: rgba(32,34,33,.66); font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
-      .start-direct-contact strong { font-size: clamp(17px, 1.6vw, 20px); font-weight: 600; overflow-wrap: anywhere; }
-      .start-form .button { max-width: 100%; white-space: normal; text-align: left; }
-      .start-form .form-status:empty { display: none; }
 
       @media (max-width: 800px) {
         .shell { width: min(100% - 32px, 640px); }
@@ -487,23 +444,7 @@
         .contact-panel { grid-template-columns: 1fr; }
         .contact-form { margin-top: 4px; }
         .contact-panel .button { margin-top: 12px; }
-        .start-direct-contact { margin-top: 44px; transform: none; }
         .site-footer { padding: 52px 0 28px; }
-        .start-hero { padding: 126px 0 70px; }
-        .start-hero-grid { grid-template-columns: 1fr; gap: 44px; }
-        .start-hero h1 { font-size: clamp(44px, 12vw, 68px); }
-        .start-price-card { padding: 28px; }
-        .start-included { padding: 76px 0; }
-        .start-item-grid { gap: 30px; margin-top: 64px; }
-        .start-item { grid-template-columns: 52px minmax(0, 1fr); column-gap: 17px; }
-        .start-item-number { width: 52px; height: 52px; font-size: 18px; }
-        .start-item h3 { font-size: 23px; }
-        .start-included { padding: 76px 0; }
-        .start-item-grid { gap: 30px; margin-top: 64px; }
-        .start-item { grid-template-columns: 52px minmax(0, 1fr); column-gap: 17px; }
-        .start-item-number { width: 52px; height: 52px; font-size: 18px; }
-        .start-item h3 { font-size: 23px; }
-        .start-contact { padding: 70px 0; }
         .footer-main { grid-template-columns: 1fr; gap: 24px; }
         .footer-brand { grid-row: auto; }
         .footer-legal { grid-column: 1; justify-content: flex-start; }
@@ -593,23 +534,6 @@
       .nav-links .contact-link .hero-cta-face { min-height: 36px; padding: 0 17px; font-size: 13px; white-space: nowrap; }
       .nav-links .contact-link.hero-cta:hover { background: rgba(205,219,168,.75); box-shadow: 0 8px 26px -8px rgba(179,197,137,.55); transform: translateY(-1px); }
       .nav-links a[aria-current="page"] { color: var(--paper); }
-      .products-section { padding: 108px 0 120px; background: var(--paper); color: var(--ink); }
-      .products-heading { max-width: 820px; margin-bottom: 48px; }
-      .products-heading .kicker { color: #596c3b; }
-      .products-heading h2 { font-family: "Fraunces", Georgia, serif; font-size: clamp(40px, 5vw, 66px); font-weight: 600; line-height: 1.04; letter-spacing: -.055em; }
-      .products-heading > p:last-child { max-width: 680px; margin: 20px 0 0; color: #505550; font-size: 18px; line-height: 1.6; }
-      .product-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
-      .product-grid-single { grid-template-columns: minmax(0, 760px); }
-      .product-card { display: flex; flex-direction: column; align-items: flex-start; min-height: 500px; padding: clamp(28px, 4vw, 52px); border-radius: 8px; }
-      .product-card-start { background: #b3c589; }
-      .product-card-top { display: flex; justify-content: space-between; gap: 16px; width: 100%; font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
-      .product-card-top span:last-child { padding: 7px 11px; border: 1px solid currentColor; border-radius: 99px; white-space: nowrap; }
-      .product-card h3 { margin: 60px 0 18px; font-family: "Fraunces", Georgia, serif; font-size: clamp(66px, 8vw, 116px); font-weight: 600; line-height: .9; letter-spacing: -.065em; }
-      .product-card p { max-width: 450px; font-size: 16px; line-height: 1.6; }
-      .product-card .product-card-lead { margin: 0; font-size: clamp(22px, 2.1vw, 30px); font-weight: 600; line-height: 1.28; letter-spacing: -.025em; }
-      .product-card > a { display: inline-flex; justify-content: space-between; align-items: center; gap: 24px; width: 100%; margin-top: auto; padding: 18px 0 0; border-top: 1px solid currentColor; font-weight: 700; }
-      .product-card > a:hover { text-decoration: underline; text-underline-offset: 4px; }
-      .product-card > a:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
       @media (max-width: 800px) {
         .nav-links .contact-link.hero-cta { margin-left: 0; padding: 2px; }
         .nav-links .contact-link .hero-cta-face { min-height: 32px; padding: 0 12px; font-size: 12px; }
@@ -617,11 +541,6 @@
         .nav-links { gap: 0; font-size: 12px; }
         .nav-links a:not(.contact-link):not(.language-link) { display: inline-flex; padding-inline: 6px; }
         .nav-links .contact-link.hero-cta { display: none; }
-        .products-section { padding: 72px 0 80px; }
-        .products-heading { margin-bottom: 32px; }
-        .product-grid { grid-template-columns: 1fr; }
-        .product-card { min-height: 440px; padding: 30px; }
-        .product-card h3 { margin-top: 56px; font-size: 76px; }
       }
       @media (max-width: 360px) { .brand-name { display: none; } .nav-links a:not(.contact-link):not(.language-link) { padding-inline: 4px; } }
       @media (max-width: 420px) { .steps { grid-template-columns: 1fr; } }
@@ -1078,7 +997,7 @@
           <div class="audience-grid">
             <article class="audience-card"><p class="audience-tag"><span>01</span>For lab teams</p><h3>AI for labs</h3><p>AI training, automations for lab data, literature and reports, and small custom tools for pharma, biotech, CROs and testing labs.</p><div class="audience-links"><a href="https://calendly.com/tamara-nosastra/lab-ai-check">Book a free 20-min Lab AI Check ↗</a></div></article>
             <article class="audience-card"><p class="audience-tag"><span>02</span>Workshops</p><h3>AI workshops and training</h3><p>Practical AI workshops for teens and adults, run through my academy.</p><div class="audience-links"><a href="https://www.thessia.academy">thessia.academy ↗</a></div></article>
-            <article class="audience-card"><p class="audience-tag"><span>03</span>Small businesses</p><h3>Websites and business tools</h3><p>Websites, custom business tools and automations for small businesses, plus Start, a launch package for new businesses.</p></article>
+            <article class="audience-card"><p class="audience-tag"><span>03</span>Small businesses</p><h3>Websites and business tools</h3><p>Websites, custom business tools and automations for small businesses.</p></article>
           </div>
         </div></section>
         <section class="labs-check"><div class="shell"><div class="section-intro"><p class="kicker">Contact</p><h2>Get in touch.</h2><p class="section-copy">Email <a href="mailto:hello@nosastra.co">hello@nosastra.co</a>. You work directly with Tamara Martinović.</p></div></div></section>

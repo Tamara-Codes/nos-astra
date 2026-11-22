@@ -1,6 +1,12 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "redirects": [
+    { "source": "/start", "destination": "/hr", "permanent": true },
+    { "source": "/start/", "destination": "/hr", "permanent": true },
+    { "source": "/hr/start", "destination": "/hr", "permanent": true },
+    { "source": "/hr/start/", "destination": "/hr", "permanent": true },
+    { "source": "/en/start", "destination": "/", "permanent": true },
+    { "source": "/en/start/", "destination": "/", "permanent": true },
     { "source": "/signal", "destination": "/", "permanent": true },
     { "source": "/signal/", "destination": "/", "permanent": true },
     { "source": "/hr/signal", "destination": "/hr", "permanent": true },
