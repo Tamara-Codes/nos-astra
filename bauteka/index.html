@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="hr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bauteka: dnevni izvještaj s terena u 30 sekundi</title>
+    <meta name="description" content="Radnici odgovore glasovnom porukom i slikom u Telegramu, a Vi dobijete gotov izvještaj sa svake lokacije, s popisom za naručiti. Pogledajte video od minute." />
+    <meta name="robots" content="noindex, follow" />
+    <link rel="canonical" href="https://www.nosastra.co/bauteka" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="hr_HR" />
+    <meta property="og:site_name" content="Bauteka" />
+    <meta property="og:title" content="Bauteka: dnevni izvještaj s terena u 30 sekundi" />
+    <meta property="og:description" content="Bez poziva, bez papira, bez zaboravljenih narudžbi. Pogledajte video od minute." />
+    <meta property="og:url" content="https://www.nosastra.co/bauteka" />
+    <meta property="og:image" content="https://www.nosastra.co/bauteka/og.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Bauteka: dnevni izvještaj s terena u 30 sekundi" />
+    <meta property="og:video" content="https://www.nosastra.co/bauteka/bauteka-demo.mp4" />
+    <meta property="og:video:type" content="video/mp4" />
+    <meta property="og:video:width" content="1080" />
+    <meta property="og:video:height" content="1920" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://www.nosastra.co/bauteka/og.jpg" />
+    <meta name="theme-color" content="#f6f4ef" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23c2410c'/%3E%3Ctext x='32' y='45' font-family='Arial,sans-serif' font-weight='700' font-size='38' fill='%23fff' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E" />
+    <style>
+      :root {
+        --bg: #f6f4ef;
+        --ink: #1c1b19;
+        --muted: #6f6b63;
+        --line: #e4e0d6;
+        --brand: #c2410c;
+        --card: #ffffff;
+      }
+      * { box-sizing: border-box; }
+      html { -webkit-text-size-adjust: 100%; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.5;
+        -webkit-font-smoothing: antialiased;
+      }
+      .wrap { width: min(1040px, calc(100% - 32px)); margin: 0 auto; }
+      header { padding: 24px 0 8px; }
+      .logo { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-size: 22px; letter-spacing: -.01em; }
+      .logo b {
+        display: grid; place-items: center; width: 36px; height: 36px; border-radius: 9px;
+        background: var(--brand); color: #fff; font-size: 20px;
+      }
+      main { display: grid; gap: 40px; padding: 24px 0 56px; align-items: start; }
+      @media (min-width: 860px) {
+        main { grid-template-columns: minmax(0, 1fr) 380px; gap: 64px; padding-top: 48px; }
+        .video-col { grid-column: 2; grid-row: 1 / span 2; position: sticky; top: 24px; }
+      }
+      h1 { font-size: clamp(30px, 5vw, 46px); line-height: 1.1; letter-spacing: -.02em; margin: 0 0 16px; }
+      .lead { font-size: 19px; color: var(--muted); margin: 0; max-width: 34em; }
+      .video-col video {
+        display: block; width: 100%; max-width: 380px; margin: 0 auto; aspect-ratio: 9 / 16;
+        border-radius: 22px; background: #e9e6de; box-shadow: 0 20px 50px rgba(28, 27, 25, .14);
+      }
+      .video-col p { text-align: center; color: var(--muted); font-size: 14px; margin: 12px 0 0; }
+      h2 { font-size: 22px; letter-spacing: -.01em; margin: 0 0 16px; }
+      ol { list-style: none; padding: 0; margin: 0 0 36px; display: grid; gap: 14px; counter-reset: s; }
+      ol li { counter-increment: s; display: grid; grid-template-columns: 30px 1fr; gap: 12px; font-size: 17px; }
+      ol li::before {
+        content: counter(s); display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%;
+        background: var(--brand); color: #fff; font-weight: 700; font-size: 14px; margin-top: 1px;
+      }
+      .outcome { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 36px; padding: 0; list-style: none; }
+      .outcome li { background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 8px 14px; font-weight: 600; font-size: 15px; }
+      .cta { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 22px 22px 20px; }
+      .cta h2 { margin-bottom: 6px; }
+      .cta p { margin: 0; color: var(--muted); font-size: 16px; }
+      footer { border-top: 1px solid var(--line); padding: 20px 0 32px; color: var(--muted); font-size: 14px; }
+      footer a { color: inherit; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="wrap"><span class="logo"><b>B</b>Bauteka</span></div>
+    </header>
+
+    <div class="wrap">
+      <main>
+        <section>
+          <h1>Dnevni izvještaj s terena u 30 sekundi.</h1>
+          <p class="lead">
+            Umjesto poziva ekipi i hrpe poruka, slika i glasovnih po raznim grupama, svaki dan dobijete uredan
+            izvještaj sa svake lokacije, s popisom svega što treba naručiti.
+          </p>
+        </section>
+
+        <section class="video-col" aria-label="Video">
+          <video controls playsinline preload="metadata" poster="/bauteka/poster.jpg">
+            <source src="/bauteka/bauteka-demo.mp4" type="video/mp4" />
+          </video>
+          <p>Kako radi, u manje od minute (uključite zvuk)</p>
+        </section>
+
+        <section>
+          <h2>Kako radi</h2>
+          <ol>
+            <li>Vi postavite podsjetnike: koliko god želite, u koje vrijeme, koje dane i s kojim tekstom.</li>
+            <li>Radnici dobiju poruku u Telegramu. Ne treba im nova aplikacija.</li>
+            <li>Odgovore glasovnom porukom i slikom, kako im je najlakše.</li>
+            <li>Bauteka od toga složi izvještaj za svaku lokaciju, a radnik ga potvrdi jednim dodirom.</li>
+            <li>Vi na jednom mjestu vidite stanje na svim lokacijama, što treba naručiti, probleme, dodatne radove i slike s terena.</li>
+          </ol>
+
+          <ul class="outcome">
+            <li>Bez poziva</li>
+            <li>Bez papira</li>
+            <li>Bez zaboravljenih narudžbi</li>
+          </ul>
+
+          <div class="cta">
+            <h2>Zanima Vas?</h2>
+            <p>Samo odgovorite na poruku ili mail koji ste dobili. Rado Vam pokažemo uživo u 15 minuta ili otvorimo probni račun.</p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer>
+      <div class="wrap">Bauteka · za građevinu, održavanje i terenske ekipe · razvija <a href="https://www.nosastra.co/hr">Nos Astra</a></div>
+    </footer>
+  </body>
+</html>

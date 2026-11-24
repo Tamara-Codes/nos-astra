@@ -65,6 +65,8 @@ export default defineConfig({
       input: {
         index: "index.html",
         privacy: "privacy.html",
+        // Standalone demo page for Bauteka outreach (nosastra.co/bauteka), linked from cold emails.
+        bauteka: "bauteka/index.html",
       },
     },
   },
