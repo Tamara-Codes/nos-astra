@@ -24,6 +24,12 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="https://www.nosastra.co/bauteka/og.jpg" />
     <meta name="theme-color" content="#f6f4ef" />
+    <!-- Vercel Web Analytics. Outreach links use their own path per channel
+         (/bauteka/email, /bauteka/video for WhatsApp) so the Pages report splits them. -->
+    <script>
+      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23c2410c'/%3E%3Ctext x='32' y='45' font-family='Arial,sans-serif' font-weight='700' font-size='38' fill='%23fff' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E" />
     <style>
       :root {
@@ -124,6 +130,21 @@
         </section>
       </main>
     </div>
+
+    <script>
+      // Count the first play of the demo video, tagged with the channel the visitor came from.
+      (function () {
+        var video = document.querySelector("video");
+        var path = location.pathname.replace(/\/+$/, "");
+        var channel = path.endsWith("/email") ? "email" : path.endsWith("/video") ? "whatsapp" : "direct";
+        var sent = false;
+        video.addEventListener("play", function () {
+          if (sent) return;
+          sent = true;
+          window.va("event", { name: "video_play", data: { channel: channel } });
+        });
+      })();
+    </script>
 
     <footer>
       <div class="wrap">Bauteka · za građevinu, održavanje i terenske ekipe · razvija <a href="https://www.nosastra.co/hr">Nos Astra</a></div>

@@ -13,6 +13,8 @@
     { "source": "/hr/signal/", "destination": "/hr", "permanent": true }
   ],
   "rewrites": [
+    { "source": "/bauteka/email", "destination": "/bauteka/index.html" },
+    { "source": "/bauteka/video", "destination": "/bauteka/index.html" },
     {
       "source": "/(.*)",
       "destination": "/index.html"
